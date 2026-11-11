@@ -1,0 +1,9 @@
+Schriften hier ablegen (selbst gehostet, nicht von Google laden – DSGVO).
+
+Benötigt (Brand "Late night"):
+- Unbounded (Gewicht 800)        -> unbounded-800.woff2
+- Inter (Variable Font)          -> inter-variable.woff2
+- JetBrains Mono (Variable Font) -> jetbrainsmono-variable.woff2
+
+Alle drei stehen unter der SIL Open Font License und dürfen selbst gehostet werden.
+Danach in assets/css/style.css den @font-face-Block oben einkommentieren.

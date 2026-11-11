@@ -1,0 +1,121 @@
+/* =========================================================
+   WillyBeLate – Grund-Stylesheet
+   Nur Struktur + Design-Tokens aus dem Brand "Late night".
+   Das eigentliche Design kommt im nächsten Schritt.
+   ========================================================= */
+
+/* ---------- Schriften (selbst gehostet, DSGVO) ----------
+   Dateien kommen nach /assets/fonts/ (siehe fonts/LIES-MICH.txt).
+   Bis dahin greifen die System-Fallbacks unten.
+
+@font-face { font-family: "Unbounded"; src: url("../fonts/unbounded-800.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("../fonts/inter-variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../fonts/jetbrainsmono-variable.woff2") format("woff2"); font-weight: 100 800; font-display: swap; }
+*/
+
+/* ---------- Design-Tokens ---------- */
+:root {
+  /* Farben */
+  --void: #0A0B12;
+  --void-raised: #151724;
+  --void-line: #2A2E44;
+  --cream: #F4F1EA;
+  --mist: #9EA3BD;
+  --ember: #FF7A45;
+  --volt: #C8FF4D;
+  --dusk: #A08CFF;
+
+  /* Schriften */
+  --font-display: "Unbounded", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  /* Maße */
+  --radius: 12px;
+  --container: 72rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { min-height: 100vh; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img, picture, svg, video { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; }
+h1, h2, h3 { line-height: 1.2; overflow-wrap: break-word; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Basis ---------- */
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--void);
+  color: var(--cream);
+  font-family: var(--font-body);
+}
+main { flex: 1; padding-block: var(--space-5); }
+h1, h2, h3 { font-family: var(--font-display); }
+a { color: var(--dusk); }
+a:hover { color: var(--cream); }
+:focus-visible { outline: 2px solid var(--volt); outline-offset: 3px; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section + .section { margin-top: var(--space-5); }
+
+.skip-link {
+  position: absolute; left: var(--space-2); top: -100px;
+  background: var(--volt); color: var(--void);
+  padding: var(--space-1) var(--space-2); border-radius: var(--radius);
+}
+.skip-link:focus { top: var(--space-2); }
+
+/* ---------- Kopfzeile ---------- */
+.site-header { border-bottom: 1px solid var(--void-line); }
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-2); padding-block: var(--space-2);
+}
+.brand {
+  font-family: var(--font-display); font-weight: 800;
+  color: var(--cream); text-decoration: none; font-size: 1.25rem;
+}
+.brand span { color: var(--ember); }
+.site-nav { display: flex; gap: var(--space-3); }
+.site-nav a { color: var(--mist); text-decoration: none; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--cream); }
+
+/* ---------- Fußzeile ---------- */
+.site-footer { border-top: 1px solid var(--void-line); color: var(--mist); font-size: .9rem; }
+.footer-inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--space-2); padding-block: var(--space-3);
+}
+.footer-inner nav { display: flex; gap: var(--space-3); }
+.site-footer a { color: var(--mist); }
+.site-footer a:hover { color: var(--cream); }
+
+/* ---------- Textseiten (Impressum, Datenschutz) ---------- */
+.prose { max-width: 48rem; }
+.prose h1 { margin-bottom: var(--space-3); }
+.prose h2 { font-size: 1.15rem; margin-top: var(--space-4); margin-bottom: var(--space-1); }
+.prose p + p { margin-top: var(--space-2); }
+
+/* Markiert offene Platzhalter – vor dem Livegang entfernen */
+.todo {
+  font-family: var(--font-mono); font-size: .85rem;
+  background: var(--void-raised); border: 1px dashed var(--ember);
+  border-radius: var(--radius); padding: var(--space-1) var(--space-2);
+}
