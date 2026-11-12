@@ -1,0 +1,11 @@
+name = "asl-api"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://willybelate.de,https://www.willybelate.de"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "asl"
+database_id = "HIER-DIE-D1-ID-EINTRAGEN"

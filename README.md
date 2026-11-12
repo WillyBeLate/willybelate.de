@@ -81,8 +81,13 @@ Dieses Repo hier hat eine eigene Domain und berührt sie nicht.
 **Wichtig:** Im Repo `willybelate.github.io` keine eigene Domain eintragen, sonst leiten die
 TikTok-Adressen um.
 
+## ASL-Hub (Turnier-Hub, /asl/)
+Liegt unter `docs/asl/` (Seite) und `asl-hub/` (Quelle, Build-Skript, Cloudflare-Worker – wird nicht veröffentlicht,
+weil nur `docs/` online geht). Einrichtung und Alltag: siehe **`asl-hub/ANLEITUNG.md`**.
+
 ## Vor dem Livegang
 - [ ] Impressum (§ 5 DDG) und Datenschutzerklärung ausfüllen (Hoster: GitHub), `.todo`-Hinweise entfernen
 - [ ] Schriften selbst hosten (keine Google-Fonts-Einbindung)
 - [ ] Favicon durch echtes Logo ersetzen
 - [ ] Enforce HTTPS aktiv
+- [ ] Datenschutz: ASL-Hub-Konten bei Cloudflare erwähnen (siehe `asl-hub/ANLEITUNG.md`)
