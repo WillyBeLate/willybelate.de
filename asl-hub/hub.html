@@ -440,6 +440,13 @@ details summary{cursor:pointer;font-weight:600;margin-bottom:10px}
 .chip.ghost.on{color:var(--felt);border-color:var(--felt)}
 @media (max-width:640px){.nav-extra{padding-left:6px}.nav-extra::before{margin-right:2px}.nav-lbl,.x-long{display:none}.tab-nm{font-size:15px;padding:6px 4px}.tabs .tab{font-size:15px;padding:10px 8px 9px}.tab.extra{padding:8px 6px 9px}.tab-edit{margin-left:2px;padding:4px 6px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.bo{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;background:var(--felt-soft);color:var(--felt);font:600 11px/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;vertical-align:2px}
+.match.bad input{border-color:var(--warn);background:var(--warn-soft)}
+.sport-row select,.bo-grid select{border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);padding:8px 10px;font:500 15px/1.2 var(--body)}
+.bo-row{display:flex;flex-direction:column;gap:8px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--sunk)}
+.bo-row[hidden]{display:none}
+.bo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.bo-grid label{display:flex;flex-direction:column;gap:4px;font:600 12px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 /* Website-Modus: Anmeldung, Konten */
 .acct{margin-left:auto;position:relative;align-self:flex-start}
 .acct-btn{background:transparent;border:1px solid var(--navy-soft);color:var(--navy-ink);border-radius:999px;padding:6px 14px;font:600 14px/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;max-width:220px;overflow:hidden;text-overflow:ellipsis}
@@ -495,7 +502,7 @@ details summary{cursor:pointer;font-weight:600;margin-bottom:10px}
 @media (max-width:640px){.modal{padding:18px}.u-add{grid-template-columns:1fr 1fr}.u-add .btn{grid-column:1/-1}.u-x{justify-content:flex-start;width:100%}.h-t{font-size:13px}}
 </style>
 <div id="root"></div>
-<script type="application/json" id="state">{"tournaments":[{"id":"t1","emoji":"🎱","title":"Billard Season I","namesText":"Dean Hawkins\nMitch Hunter\nNika Rivera\nAvery Brettchen\nElla Cooper\nDrake Vance\nRiley Skye Ashcroft\nTyler Ferron\nClay Thompson\nLiam Brooks\nJohn Sheridan\nSteve Miller\nChristina Raven\nDesmond Washington\nLennox Gilles\nLautaro Valdez\nTeresa Valdez\nAriana Dawson\nDaniel Choise\nDean Armstrong\nChloe Clark\nRafael A. Lascano\nAaron Duke\nScott Brockman\nChloe Hampton\nSophie König\nJayden Brooks\nThomas Watkins\nRonny Wilson\nKyle Dunner\nI. F. Brennan\nD. McIntyre\nDestiny Carter\nT. John McBain\nAlan O Neill\nTito Martinez\nElias Vega\nAdrian Hunter","groupsCount":8,"players":[{"id":0,"name":"Dean Hawkins"},{"id":1,"name":"Mitch Hunter"},{"id":2,"name":"Nika Rivera"},{"id":3,"name":"Avery Brettchen"},{"id":4,"name":"Ella Cooper"},{"id":5,"name":"Drake Vance"},{"id":6,"name":"Riley Skye Ashcroft"},{"id":7,"name":"Tyler Ferron"},{"id":8,"name":"Clay Thompson"},{"id":9,"name":"Liam Brooks"},{"id":10,"name":"John Sheridan"},{"id":11,"name":"Steve Miller"},{"id":12,"name":"Christina Raven"},{"id":13,"name":"Desmond Washington"},{"id":14,"name":"Lennox Gilles"},{"id":15,"name":"Lautaro Valdez"},{"id":16,"name":"Teresa Valdez"},{"id":17,"name":"Ariana Dawson"},{"id":18,"name":"Daniel Choise"},{"id":19,"name":"Dean Armstrong"},{"id":20,"name":"Chloe Clark"},{"id":21,"name":"Rafael A. Lascano"},{"id":22,"name":"Aaron Duke"},{"id":23,"name":"Scott Brockman"},{"id":24,"name":"Chloe Hampton"},{"id":25,"name":"Sophie König"},{"id":26,"name":"Jayden Brooks"},{"id":27,"name":"Thomas Watkins"},{"id":28,"name":"Ronny Wilson"},{"id":29,"name":"Kyle Dunner"},{"id":30,"name":"I. F. Brennan"},{"id":31,"name":"D. McIntyre"},{"id":32,"name":"Destiny Carter"},{"id":33,"name":"T. John McBain"},{"id":34,"name":"Alan O Neill"},{"id":35,"name":"Tito Martinez"},{"id":36,"name":"Elias Vega"},{"id":37,"name":"Adrian Hunter"}],"groups":[{"name":"A","players":[13,30,17,15,10],"matches":[{"r":1,"a":30,"b":10,"sa":2,"sb":1},{"r":1,"a":17,"b":15,"sa":0,"sb":2},{"r":2,"a":13,"b":10,"sa":2,"sb":1},{"r":2,"a":30,"b":17,"sa":0,"sb":0,"wo":"both"},{"r":3,"a":13,"b":15,"sa":0,"sb":2},{"r":3,"a":10,"b":17,"sa":0,"sb":2},{"r":4,"a":13,"b":17,"sa":0,"sb":2},{"r":4,"a":15,"b":30,"sa":2,"sb":1},{"r":5,"a":13,"b":30,"sa":2,"sb":0},{"r":5,"a":15,"b":10,"sa":2,"sb":0}],"manual":null},{"name":"B","players":[7,14,12,20,34],"matches":[{"r":1,"a":14,"b":34,"sa":2,"sb":0},{"r":1,"a":12,"b":20,"sa":0,"sb":2},{"r":2,"a":7,"b":34,"sa":2,"sb":0},{"r":2,"a":14,"b":12,"sa":2,"sb":0},{"r":3,"a":7,"b":20,"sa":2,"sb":1},{"r":3,"a":34,"b":12,"sa":1,"sb":2},{"r":4,"a":7,"b":12,"sa":2,"sb":1},{"r":4,"a":20,"b":14,"sa":0,"sb":2},{"r":5,"a":7,"b":14,"sa":2,"sb":0},{"r":5,"a":20,"b":34,"sa":1,"sb":2}],"manual":null},{"name":"C","players":[19,2,18,27,4],"matches":[{"r":1,"a":2,"b":4,"sa":2,"sb":0},{"r":1,"a":18,"b":27,"sa":2,"sb":1},{"r":2,"a":19,"b":4,"sa":2,"sb":0},{"r":2,"a":2,"b":18,"sa":1,"sb":2},{"r":3,"a":19,"b":27,"sa":2,"sb":0},{"r":3,"a":4,"b":18,"sa":2,"sb":0},{"r":4,"a":19,"b":18,"sa":0,"sb":2},{"r":4,"a":27,"b":2,"sa":1,"sb":2},{"r":5,"a":19,"b":2,"sa":2,"sb":0},{"r":5,"a":27,"b":4,"sa":0,"sb":0,"wo":"both"}],"manual":null},{"name":"D","players":[24,35,29,33,25],"matches":[{"r":1,"a":35,"b":25,"sa":0,"sb":2},{"r":1,"a":29,"b":33,"sa":2,"sb":0},{"r":2,"a":24,"b":25,"sa":2,"sb":1},{"r":2,"a":35,"b":29,"sa":1,"sb":2},{"r":3,"a":24,"b":33,"sa":2,"sb":1},{"r":3,"a":25,"b":29,"sa":1,"sb":2},{"r":4,"a":24,"b":29,"sa":1,"sb":2},{"r":4,"a":33,"b":35,"sa":2,"sb":1},{"r":5,"a":24,"b":35,"sa":1,"sb":2},{"r":5,"a":33,"b":25,"sa":0,"sb":2}],"manual":null},{"name":"E","players":[11,9,1,3,37],"matches":[{"r":1,"a":9,"b":37,"sa":0,"sb":2},{"r":1,"a":1,"b":3,"sa":0,"sb":2},{"r":2,"a":11,"b":37,"sa":0,"sb":2},{"r":2,"a":9,"b":1,"sa":0,"sb":0,"wo":"both"},{"r":3,"a":11,"b":3,"sa":2,"sb":1},{"r":3,"a":37,"b":1,"sa":2,"sb":0},{"r":4,"a":11,"b":1,"sa":2,"sb":0},{"r":4,"a":3,"b":9,"sa":2,"sb":0},{"r":5,"a":11,"b":9,"sa":2,"sb":0},{"r":5,"a":3,"b":37,"sa":0,"sb":2}],"manual":null},{"name":"F","players":[6,31,23,16],"matches":[{"r":1,"a":6,"b":16,"sa":0,"sb":0,"wo":"both"},{"r":1,"a":31,"b":23,"sa":1,"sb":2},{"r":2,"a":6,"b":23,"sa":1,"sb":2},{"r":2,"a":16,"b":31,"sa":2,"sb":0},{"r":3,"a":6,"b":31,"sa":0,"sb":2},{"r":3,"a":23,"b":16,"sa":2,"sb":0}],"manual":null},{"name":"G","players":[8,32,5,0,36],"matches":[{"r":1,"a":32,"b":36,"sa":2,"sb":0},{"r":1,"a":5,"b":0,"sa":0,"sb":2},{"r":2,"a":8,"b":36,"sa":1,"sb":2},{"r":2,"a":32,"b":5,"sa":2,"sb":0},{"r":3,"a":8,"b":0,"sa":0,"sb":2},{"r":3,"a":36,"b":5,"sa":0,"sb":0,"wo":"both"},{"r":4,"a":8,"b":5,"sa":2,"sb":0},{"r":4,"a":0,"b":32,"sa":1,"sb":2},{"r":5,"a":8,"b":32,"sa":2,"sb":0},{"r":5,"a":0,"b":36,"sa":2,"sb":0}],"manual":null},{"name":"H","players":[21,28,22,26],"matches":[{"r":1,"a":21,"b":26,"sa":2,"sb":1},{"r":1,"a":28,"b":22,"sa":1,"sb":2},{"r":2,"a":21,"b":22,"sa":1,"sb":2,"wo":null},{"r":2,"a":26,"b":28,"sa":0,"sb":2},{"r":3,"a":21,"b":28,"sa":1,"sb":2},{"r":3,"a":22,"b":26,"sa":1,"sb":2}],"manual":null}],"ko":{"scores":{"0-7":{"pa":28,"pb":32,"sa":2,"sb":0},"0-3":{"pa":0,"pb":22,"sa":2,"sb":1},"0-2":{"pa":37,"pb":16,"sa":2,"sb":0},"0-1":{"pa":19,"pb":25,"sa":0,"sb":2},"0-6":{"pa":23,"pb":11,"sa":2,"sb":0},"0-5":{"pa":29,"pb":18,"sa":1,"sb":2},"0-4":{"pa":7,"pb":17,"sa":1,"sb":2}}},"thirdPlace":true,"deadlines":{"groups":"2026-11-04T23:59","r0":"2026-11-15T23:59"},"prize":"30.000$","payout":{"upTo":16,"amounts":{"p1":9500,"p2":5100,"p3":3300,"p4":2100,"p58":1300,"p916":600},"print":true}},{"id":"tmw40z9a1","emoji":"🎯","title":"Test","namesText":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n\n","groupsCount":8,"players":[{"id":0,"name":"1"},{"id":1,"name":"2"},{"id":2,"name":"3"},{"id":3,"name":"4"},{"id":4,"name":"5"},{"id":5,"name":"6"},{"id":6,"name":"7"},{"id":7,"name":"8"},{"id":8,"name":"9"},{"id":9,"name":"10"},{"id":10,"name":"11"},{"id":11,"name":"12"},{"id":12,"name":"13"},{"id":13,"name":"14"},{"id":14,"name":"15"},{"id":15,"name":"16"}],"groups":[{"name":"A","players":[8,10],"matches":[{"r":1,"a":8,"b":10,"sa":2,"sb":0}],"manual":null},{"name":"B","players":[12,4],"matches":[{"r":1,"a":12,"b":4,"sa":2,"sb":1}],"manual":null},{"name":"C","players":[7,0],"matches":[{"r":1,"a":7,"b":0,"sa":null,"sb":null}],"manual":null},{"name":"D","players":[15,13],"matches":[{"r":1,"a":15,"b":13,"sa":null,"sb":null}],"manual":null},{"name":"E","players":[11,6],"matches":[{"r":1,"a":11,"b":6,"sa":2,"sb":0}],"manual":null},{"name":"F","players":[3,9],"matches":[{"r":1,"a":3,"b":9,"sa":null,"sb":null}],"manual":null},{"name":"G","players":[5,2],"matches":[{"r":1,"a":5,"b":2,"sa":null,"sb":null}],"manual":null},{"name":"H","players":[1,14],"matches":[{"r":1,"a":1,"b":14,"sa":null,"sb":null}],"manual":null}],"ko":null,"thirdPlace":true,"deadlines":{},"prize":"","payout":{"upTo":4,"amounts":{},"print":false},"bets":{"on":true,"cut":10,"list":[{"id":"wmw416ng3w90","mk":"g:B:12-4","pick":12,"amt":2000,"who":"1","at":1793912499507,"paid":false},{"id":"wmw4176fdoea","mk":"g:B:12-4","pick":4,"amt":3000,"who":"4","at":1793912524105,"paid":false},{"id":"wmw41ak7ltd1","mk":"g:A:10-8","pick":10,"amt":2000,"who":"16","at":1793912681937,"paid":false},{"id":"wmw46td22amf","mk":"g:E:11-6","pick":11,"amt":1000,"who":"1","at":1793921957210,"paid":false},{"id":"wmw46u850wyn","mk":"g:E:11-6","pick":6,"amt":5000,"who":"15","at":1793921997492,"paid":false}],"booked":{}}}],"bingo":{"title":"Streifen-Bingo","easy":"Verkehrsunfall mit anderem Verkehrsteilnehmer\nVerfolgung gestellt\nBeim Shopdispatch: \"Wir kaufen ein für Party/Feier\"\nBeim Shopdispatch: Gegenstände heruntergeworfen\nVerbandskasten/Warndreieck fehlt\nmin. 1x CURE alamiert\nbei Allgemeiner Verkehrskontrolle min. 5 Blitzer offen\nOfficer funkt bei Verfolgung falsche Himmelsrichtung/Gebäude/Straße durch (kein Punkt für Funkenden)\nBeifahrer steigt unaufgefordert bei Verkehrskontrolle mit aus\nFührerschein nicht dabei/im Besitz\nBehauptung nach Messung: \"Ihr Gerät ist defekt.\"\nim falschen Funk gefunkt\nStromausfall\nAnzahl vom selben Dispatch (z.B. 3x entflogener Vogel)\n3er Jugular Kolonne","medium":"Hausfriedensbruch (auch ungeahndet)\n>1000$ Blitzer bei einer Person\nPärchen beim Cringen gestört\nStreife wurde mit anderem Department verwechselt\nMellow Partybus gesichtet\nOffroad-Fahrzeug macht bei Verfolgung die Bergziege\n\"Das ist nicht mein Fahrzeug, das gehört einem Kumpel.\"\nZivilist nennt den Junior \"Azubi\"\n\"Das ist heute das x-Mal, dass Sie mich anhalten.\"\n\"Ich habe die Sirene nicht gehört, weil Radio zu laut.\"\nTäter weigert sich Fingerabdrücke/DNA abzugeben oder Aktenfotos von sich machen zu lassen\nTäter versucht bei Maßnahme zu flüchten\n\"Ich warte auf einen Freund.\"\nTranzende Personen am Dispatch\nFahrzeug ist aufgrund Reifenplatzer zum Stehen gekommen\nzu verfolgendes Fahrzeug verunfallt bei Verfolgung selbst","hard":"Unfallfrei (bis Ende des Bingos)\nZivilist fährt in offensichtlich abgesperrte Tatortsicherung und fragt, was passiert ist\nJemand läuft mit Maske rum und behauptet, es sei aus gesundheitlichen Gründen\nStreunendes Tier fotografieren (ohne Halter)","example":false,"card":{"cells":[{"t":"Beim Shopdispatch: \"Wir kaufen ein für Party/Feier\"","l":"easy"},{"t":"Streife wurde mit anderem Department verwechselt","l":"medium"},{"t":"bei Allgemeiner Verkehrskontrolle min. 5 Blitzer offen","l":"easy"},{"t":"zu verfolgendes Fahrzeug verunfallt bei Verfolgung selbst","l":"medium"},{"free":true},{"t":"Jemand läuft mit Maske rum und behauptet, es sei aus gesundheitlichen Gründen","l":"hard"},{"t":"Behauptung nach Messung: \"Ihr Gerät ist defekt.\"","l":"easy"},{"t":"Unfallfrei (bis Ende des Bingos)","l":"hard"},{"t":"Verbandskasten/Warndreieck fehlt","l":"easy"}],"no":9667,"at":1793921902449}},"konto":{"entries":[{"id":"kmvme1jqdw1n","d":"2026-10-24","amt":80000,"purpose":"Startgeld Billard Season I","tid":null,"prize":false}]}}</script>
+<script type="application/json" id="state">{"tournaments": [{"id": "t1", "emoji": "🎱", "title": "Billard Season I", "namesText": "Dean Hawkins\nMitch Hunter\nNika Rivera\nAvery Brettchen\nElla Cooper\nDrake Vance\nRiley Skye Ashcroft\nTyler Ferron\nClay Thompson\nLiam Brooks\nJohn Sheridan\nSteve Miller\nChristina Raven\nDesmond Washington\nLennox Gilles\nLautaro Valdez\nTeresa Valdez\nAriana Dawson\nDaniel Choise\nDean Armstrong\nChloe Clark\nRafael A. Lascano\nAaron Duke\nScott Brockman\nChloe Hampton\nSophie König\nJayden Brooks\nThomas Watkins\nRonny Wilson\nKyle Dunner\nI. F. Brennan\nD. McIntyre\nDestiny Carter\nT. John McBain\nAlan O Neill\nTito Martinez\nElias Vega\nAdrian Hunter", "groupsCount": 8, "players": [{"id": 0, "name": "Dean Hawkins"}, {"id": 1, "name": "Mitch Hunter"}, {"id": 2, "name": "Nika Rivera"}, {"id": 3, "name": "Avery Brettchen"}, {"id": 4, "name": "Ella Cooper"}, {"id": 5, "name": "Drake Vance"}, {"id": 6, "name": "Riley Skye Ashcroft"}, {"id": 7, "name": "Tyler Ferron"}, {"id": 8, "name": "Clay Thompson"}, {"id": 9, "name": "Liam Brooks"}, {"id": 10, "name": "John Sheridan"}, {"id": 11, "name": "Steve Miller"}, {"id": 12, "name": "Christina Raven"}, {"id": 13, "name": "Desmond Washington"}, {"id": 14, "name": "Lennox Gilles"}, {"id": 15, "name": "Lautaro Valdez"}, {"id": 16, "name": "Teresa Valdez"}, {"id": 17, "name": "Ariana Dawson"}, {"id": 18, "name": "Daniel Choise"}, {"id": 19, "name": "Dean Armstrong"}, {"id": 20, "name": "Chloe Clark"}, {"id": 21, "name": "Rafael A. Lascano"}, {"id": 22, "name": "Aaron Duke"}, {"id": 23, "name": "Scott Brockman"}, {"id": 24, "name": "Chloe Hampton"}, {"id": 25, "name": "Sophie König"}, {"id": 26, "name": "Jayden Brooks"}, {"id": 27, "name": "Thomas Watkins"}, {"id": 28, "name": "Ronny Wilson"}, {"id": 29, "name": "Kyle Dunner"}, {"id": 30, "name": "I. F. Brennan"}, {"id": 31, "name": "D. McIntyre"}, {"id": 32, "name": "Destiny Carter"}, {"id": 33, "name": "T. John McBain"}, {"id": 34, "name": "Alan O Neill"}, {"id": 35, "name": "Tito Martinez"}, {"id": 36, "name": "Elias Vega"}, {"id": 37, "name": "Adrian Hunter"}], "groups": [{"name": "A", "players": [13, 30, 17, 15, 10], "matches": [{"r": 1, "a": 30, "b": 10, "sa": 2, "sb": 1}, {"r": 1, "a": 17, "b": 15, "sa": 0, "sb": 2}, {"r": 2, "a": 13, "b": 10, "sa": 2, "sb": 1}, {"r": 2, "a": 30, "b": 17, "sa": 0, "sb": 0, "wo": "both"}, {"r": 3, "a": 13, "b": 15, "sa": 0, "sb": 2}, {"r": 3, "a": 10, "b": 17, "sa": 0, "sb": 2}, {"r": 4, "a": 13, "b": 17, "sa": 0, "sb": 2}, {"r": 4, "a": 15, "b": 30, "sa": 2, "sb": 1}, {"r": 5, "a": 13, "b": 30, "sa": 2, "sb": 0}, {"r": 5, "a": 15, "b": 10, "sa": 2, "sb": 0}], "manual": null}, {"name": "B", "players": [7, 14, 12, 20, 34], "matches": [{"r": 1, "a": 14, "b": 34, "sa": 2, "sb": 0}, {"r": 1, "a": 12, "b": 20, "sa": 0, "sb": 2}, {"r": 2, "a": 7, "b": 34, "sa": 2, "sb": 0}, {"r": 2, "a": 14, "b": 12, "sa": 2, "sb": 0}, {"r": 3, "a": 7, "b": 20, "sa": 2, "sb": 1}, {"r": 3, "a": 34, "b": 12, "sa": 1, "sb": 2}, {"r": 4, "a": 7, "b": 12, "sa": 2, "sb": 1}, {"r": 4, "a": 20, "b": 14, "sa": 0, "sb": 2}, {"r": 5, "a": 7, "b": 14, "sa": 2, "sb": 0}, {"r": 5, "a": 20, "b": 34, "sa": 1, "sb": 2}], "manual": null}, {"name": "C", "players": [19, 2, 18, 27, 4], "matches": [{"r": 1, "a": 2, "b": 4, "sa": 2, "sb": 0}, {"r": 1, "a": 18, "b": 27, "sa": 2, "sb": 1}, {"r": 2, "a": 19, "b": 4, "sa": 2, "sb": 0}, {"r": 2, "a": 2, "b": 18, "sa": 1, "sb": 2}, {"r": 3, "a": 19, "b": 27, "sa": 2, "sb": 0}, {"r": 3, "a": 4, "b": 18, "sa": 2, "sb": 0}, {"r": 4, "a": 19, "b": 18, "sa": 0, "sb": 2}, {"r": 4, "a": 27, "b": 2, "sa": 1, "sb": 2}, {"r": 5, "a": 19, "b": 2, "sa": 2, "sb": 0}, {"r": 5, "a": 27, "b": 4, "sa": 0, "sb": 0, "wo": "both"}], "manual": null}, {"name": "D", "players": [24, 35, 29, 33, 25], "matches": [{"r": 1, "a": 35, "b": 25, "sa": 0, "sb": 2}, {"r": 1, "a": 29, "b": 33, "sa": 2, "sb": 0}, {"r": 2, "a": 24, "b": 25, "sa": 2, "sb": 1}, {"r": 2, "a": 35, "b": 29, "sa": 1, "sb": 2}, {"r": 3, "a": 24, "b": 33, "sa": 2, "sb": 1}, {"r": 3, "a": 25, "b": 29, "sa": 1, "sb": 2}, {"r": 4, "a": 24, "b": 29, "sa": 1, "sb": 2}, {"r": 4, "a": 33, "b": 35, "sa": 2, "sb": 1}, {"r": 5, "a": 24, "b": 35, "sa": 1, "sb": 2}, {"r": 5, "a": 33, "b": 25, "sa": 0, "sb": 2}], "manual": null}, {"name": "E", "players": [11, 9, 1, 3, 37], "matches": [{"r": 1, "a": 9, "b": 37, "sa": 0, "sb": 2}, {"r": 1, "a": 1, "b": 3, "sa": 0, "sb": 2}, {"r": 2, "a": 11, "b": 37, "sa": 0, "sb": 2}, {"r": 2, "a": 9, "b": 1, "sa": 0, "sb": 0, "wo": "both"}, {"r": 3, "a": 11, "b": 3, "sa": 2, "sb": 1}, {"r": 3, "a": 37, "b": 1, "sa": 2, "sb": 0}, {"r": 4, "a": 11, "b": 1, "sa": 2, "sb": 0}, {"r": 4, "a": 3, "b": 9, "sa": 2, "sb": 0}, {"r": 5, "a": 11, "b": 9, "sa": 2, "sb": 0}, {"r": 5, "a": 3, "b": 37, "sa": 0, "sb": 2}], "manual": null}, {"name": "F", "players": [6, 31, 23, 16], "matches": [{"r": 1, "a": 6, "b": 16, "sa": 0, "sb": 0, "wo": "both"}, {"r": 1, "a": 31, "b": 23, "sa": 1, "sb": 2}, {"r": 2, "a": 6, "b": 23, "sa": 1, "sb": 2}, {"r": 2, "a": 16, "b": 31, "sa": 2, "sb": 0}, {"r": 3, "a": 6, "b": 31, "sa": 0, "sb": 2}, {"r": 3, "a": 23, "b": 16, "sa": 2, "sb": 0}], "manual": null}, {"name": "G", "players": [8, 32, 5, 0, 36], "matches": [{"r": 1, "a": 32, "b": 36, "sa": 2, "sb": 0}, {"r": 1, "a": 5, "b": 0, "sa": 0, "sb": 2}, {"r": 2, "a": 8, "b": 36, "sa": 1, "sb": 2}, {"r": 2, "a": 32, "b": 5, "sa": 2, "sb": 0}, {"r": 3, "a": 8, "b": 0, "sa": 0, "sb": 2}, {"r": 3, "a": 36, "b": 5, "sa": 0, "sb": 0, "wo": "both"}, {"r": 4, "a": 8, "b": 5, "sa": 2, "sb": 0}, {"r": 4, "a": 0, "b": 32, "sa": 1, "sb": 2}, {"r": 5, "a": 8, "b": 32, "sa": 2, "sb": 0}, {"r": 5, "a": 0, "b": 36, "sa": 2, "sb": 0}], "manual": null}, {"name": "H", "players": [21, 28, 22, 26], "matches": [{"r": 1, "a": 21, "b": 26, "sa": 2, "sb": 1}, {"r": 1, "a": 28, "b": 22, "sa": 1, "sb": 2}, {"r": 2, "a": 21, "b": 22, "sa": 1, "sb": 2, "wo": null}, {"r": 2, "a": 26, "b": 28, "sa": 0, "sb": 2}, {"r": 3, "a": 21, "b": 28, "sa": 1, "sb": 2}, {"r": 3, "a": 22, "b": 26, "sa": 1, "sb": 2}], "manual": null}], "ko": {"scores": {"0-7": {"pa": 28, "pb": 32, "sa": 2, "sb": 0}, "0-3": {"pa": 0, "pb": 22, "sa": 2, "sb": 1}, "0-2": {"pa": 37, "pb": 16, "sa": 2, "sb": 0}, "0-1": {"pa": 19, "pb": 25, "sa": 0, "sb": 2}, "0-6": {"pa": 23, "pb": 11, "sa": 2, "sb": 0}, "0-5": {"pa": 29, "pb": 18, "sa": 1, "sb": 2}, "0-4": {"pa": 7, "pb": 17, "sa": 1, "sb": 2}, "0-0": {"pa": 15, "pb": 14, "sa": 2, "sb": 1}, "1-1": {"pa": 37, "pb": 0, "sa": 2, "sb": 1}}}, "thirdPlace": true, "deadlines": {"groups": "2026-11-04T23:59", "r0": "2026-11-15T23:59", "r1": "2026-11-22T23:59"}, "prize": "30.000$", "payout": {"upTo": 16, "amounts": {"p1": 9500, "p2": 5100, "p3": 3300, "p4": 2100, "p58": 1300, "p916": 600}, "print": true}}, {"id": "tmw40z9a1", "emoji": "🎯", "title": "Test", "namesText": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n\n", "groupsCount": 8, "players": [{"id": 0, "name": "1"}, {"id": 1, "name": "2"}, {"id": 2, "name": "3"}, {"id": 3, "name": "4"}, {"id": 4, "name": "5"}, {"id": 5, "name": "6"}, {"id": 6, "name": "7"}, {"id": 7, "name": "8"}, {"id": 8, "name": "9"}, {"id": 9, "name": "10"}, {"id": 10, "name": "11"}, {"id": 11, "name": "12"}, {"id": 12, "name": "13"}, {"id": 13, "name": "14"}, {"id": 14, "name": "15"}, {"id": 15, "name": "16"}], "groups": [{"name": "A", "players": [8, 10], "matches": [{"r": 1, "a": 8, "b": 10, "sa": 2, "sb": 0}], "manual": null}, {"name": "B", "players": [12, 4], "matches": [{"r": 1, "a": 12, "b": 4, "sa": 2, "sb": 1}], "manual": null}, {"name": "C", "players": [7, 0], "matches": [{"r": 1, "a": 7, "b": 0, "sa": null, "sb": null}], "manual": null}, {"name": "D", "players": [15, 13], "matches": [{"r": 1, "a": 15, "b": 13, "sa": null, "sb": null}], "manual": null}, {"name": "E", "players": [11, 6], "matches": [{"r": 1, "a": 11, "b": 6, "sa": 2, "sb": 0}], "manual": null}, {"name": "F", "players": [3, 9], "matches": [{"r": 1, "a": 3, "b": 9, "sa": null, "sb": null}], "manual": null}, {"name": "G", "players": [5, 2], "matches": [{"r": 1, "a": 5, "b": 2, "sa": null, "sb": null}], "manual": null}, {"name": "H", "players": [1, 14], "matches": [{"r": 1, "a": 1, "b": 14, "sa": null, "sb": null}], "manual": null}], "ko": null, "thirdPlace": true, "deadlines": {}, "prize": "", "payout": {"upTo": 4, "amounts": {}, "print": false}, "bets": {"on": true, "cut": 10, "list": [{"id": "wmw416ng3w90", "mk": "g:B:12-4", "pick": 12, "amt": 2000, "who": "1", "at": 1793912499507, "paid": false}, {"id": "wmw4176fdoea", "mk": "g:B:12-4", "pick": 4, "amt": 3000, "who": "4", "at": 1793912524105, "paid": false}, {"id": "wmw41ak7ltd1", "mk": "g:A:10-8", "pick": 10, "amt": 2000, "who": "16", "at": 1793912681937, "paid": false}, {"id": "wmw46td22amf", "mk": "g:E:11-6", "pick": 11, "amt": 1000, "who": "1", "at": 1793921957210, "paid": false}, {"id": "wmw46u850wyn", "mk": "g:E:11-6", "pick": 6, "amt": 5000, "who": "15", "at": 1793921997492, "paid": false}], "booked": {}}}], "bingo": {"title": "Streifen-Bingo", "easy": "Verkehrsunfall mit anderem Verkehrsteilnehmer\nVerfolgung gestellt\nBeim Shopdispatch: \"Wir kaufen ein für Party/Feier\"\nBeim Shopdispatch: Gegenstände heruntergeworfen\nVerbandskasten/Warndreieck fehlt\nmin. 1x CURE alamiert\nbei Allgemeiner Verkehrskontrolle min. 5 Blitzer offen\nOfficer funkt bei Verfolgung falsche Himmelsrichtung/Gebäude/Straße durch (kein Punkt für Funkenden)\nBeifahrer steigt unaufgefordert bei Verkehrskontrolle mit aus\nFührerschein nicht dabei/im Besitz\nBehauptung nach Messung: \"Ihr Gerät ist defekt.\"\nim falschen Funk gefunkt\nStromausfall\nAnzahl vom selben Dispatch (z.B. 3x entflogener Vogel)\n3er Jugular Kolonne", "medium": "Hausfriedensbruch (auch ungeahndet)\n>1000$ Blitzer bei einer Person\nPärchen beim Cringen gestört\nStreife wurde mit anderem Department verwechselt\nMellow Partybus gesichtet\nOffroad-Fahrzeug macht bei Verfolgung die Bergziege\n\"Das ist nicht mein Fahrzeug, das gehört einem Kumpel.\"\nZivilist nennt den Junior \"Azubi\"\n\"Das ist heute das x-Mal, dass Sie mich anhalten.\"\n\"Ich habe die Sirene nicht gehört, weil Radio zu laut.\"\nTäter weigert sich Fingerabdrücke/DNA abzugeben oder Aktenfotos von sich machen zu lassen\nTäter versucht bei Maßnahme zu flüchten\n\"Ich warte auf einen Freund.\"\nTranzende Personen am Dispatch\nFahrzeug ist aufgrund Reifenplatzer zum Stehen gekommen\nzu verfolgendes Fahrzeug verunfallt bei Verfolgung selbst", "hard": "Unfallfrei (bis Ende des Bingos)\nZivilist fährt in offensichtlich abgesperrte Tatortsicherung und fragt, was passiert ist\nJemand läuft mit Maske rum und behauptet, es sei aus gesundheitlichen Gründen\nStreunendes Tier fotografieren (ohne Halter)", "example": false, "card": {"cells": [{"t": "Beim Shopdispatch: \"Wir kaufen ein für Party/Feier\"", "l": "easy"}, {"t": "Streife wurde mit anderem Department verwechselt", "l": "medium"}, {"t": "bei Allgemeiner Verkehrskontrolle min. 5 Blitzer offen", "l": "easy"}, {"t": "zu verfolgendes Fahrzeug verunfallt bei Verfolgung selbst", "l": "medium"}, {"free": true}, {"t": "Jemand läuft mit Maske rum und behauptet, es sei aus gesundheitlichen Gründen", "l": "hard"}, {"t": "Behauptung nach Messung: \"Ihr Gerät ist defekt.\"", "l": "easy"}, {"t": "Unfallfrei (bis Ende des Bingos)", "l": "hard"}, {"t": "Verbandskasten/Warndreieck fehlt", "l": "easy"}], "no": 9667, "at": 1793921902449}}, "konto": {"entries": [{"id": "kmvme1jqdw1n", "d": "2026-10-24", "amt": 80000, "purpose": "Startgeld Billard Season I", "tid": null, "prize": false}]}}</script>
 <script id="app">
 (function(){
 const LETTERS = 'ABCDEFGH';
@@ -553,10 +560,26 @@ let editGroups = false, menuOpen = false, exWhat = null, exFmt = 'pdf';
 
 const advOf = () => 16 / (state.groups.length || state.groupsCount);
 const nameOf = id => (state.players[id] ? state.players[id].name : '?');
+// Sportarten: Begriffe + Match-Länge (Best of) je Runde
+const SPORTS = {
+  billard: { name: 'Billard', em: '🎱', u: 'Frames', u1: 'Frame', ab: 'Fr.', d: 'Frame-Differenz' },
+  dart: { name: 'Dart', em: '🎯', u: 'Legs', u1: 'Leg', ab: 'Legs', d: 'Leg-Differenz' },
+};
+const BO_DEF = { g: 3, r0: 3, r1: 5, r2: 5, p3: 5, r3: 7 };
+const BO_KEYS = [['g', 'Gruppen'], ['r0', 'Achtelfinale'], ['r1', 'Viertelfinale'], ['r2', 'Halbfinale'], ['p3', 'Platz 3'], ['r3', 'Finale']];
+const sportOf = t => (t = t || state, t && SPORTS[t.sport] ? t.sport : 'billard');
+const SP = () => SPORTS[sportOf()];
+const isDart = () => sportOf() === 'dart';
+const boOf = k => (isDart() ? (state.bo && +state.bo[k]) || BO_DEF[k] : 0);
+const need = k => { const b = boOf(k); return b ? Math.ceil(b / 2) : 0; };
+const okScore = (sa, sb, k) => { const n = need(k); return !n || (Math.max(sa, sb) === n && Math.min(sa, sb) < n); };
+const koK = key => (key === '3p' ? 'p3' : 'r' + key[0]);
+const boTag = k => (isDart() ? ` <span class="bo">Best of ${boOf(k)}</span>` : '');
 const num = v => { if (v === '' || v == null) return null; const n = Math.floor(+v); return isNaN(n) ? null : Math.max(0, n); };
-const played = m => m.wo === 'both' || (m.sa != null && m.sb != null && m.sa !== m.sb);
+const played = m => m.wo === 'both' || (m.sa != null && m.sb != null && m.sa !== m.sb && (!!m.wo || okScore(m.sa, m.sb, 'g')));
 // Kampflos-Wertung: übliche Gewinn-Frames im Turnier (meist 2), sonst 2
-function woFrames() {
+function woFrames(k) {
+  if (isDart()) return need(k || 'g');
   const cnt = {};
   state.groups.forEach(g => g.matches.forEach(m => { if (!m.wo && played(m)) { const w = Math.max(m.sa, m.sb); cnt[w] = (cnt[w] || 0) + 1; } }));
   const best = Object.entries(cnt).sort((a, b) => b[1] - a[1])[0];
@@ -701,7 +724,7 @@ function bracket() {
     let wo = null;
     if (s && s.pa === A.id && s.pb === B.id) { sa = s.sa; sb = s.sb; wo = s.wo || null; }
     let winner = null, loser = null;
-    if (A.id != null && B.id != null && sa != null && sb != null && sa !== sb) { winner = sa > sb ? A.id : B.id; loser = sa > sb ? B.id : A.id; }
+    if (A.id != null && B.id != null && sa != null && sb != null && sa !== sb && (wo || okScore(sa, sb, koK(key)))) { winner = sa > sb ? A.id : B.id; loser = sa > sb ? B.id : A.id; }
     return { key, A, B, sa, sb, winner, loser, wo };
   }
   const rounds = [seeds.map((p, i) => mk('0-' + i, p[0], p[1]))];
@@ -785,7 +808,7 @@ function groupsHTML() {
     h += `<div class="banner">Spieler umbenennen, in eine andere Gruppe verschieben oder mit jemandem tauschen. Spielpläne passen sich automatisch an. Schon eingetragene Ergebnisse bleiben, solange die Paarung bestehen bleibt.</div>`;
     return h + '<div class="groups">' + state.groups.map((g, gi) => groupEditCard(g, gi, A)).join('') + '</div>';
   }
-  if (canWrite && !complete) h += `<p class="hint" style="margin:-8px 0 16px">Ergebnis in gewonnenen Frames eintragen, z. B. 2 : 1. Wer nur einen Frame spielt, trägt 1 : 0 ein. Sobald eine Gruppe fertig ist, rücken ihre Weiterkommer direkt in die KO-Runde.</p>`;
+  if (canWrite && !complete) h += `<p class="hint" style="margin:-8px 0 16px">${isDart() ? `Ergebnis in gewonnenen Legs eintragen. Gruppenspiele gehen über Best of ${boOf('g')}: Wer zuerst ${need('g')} Legs hat, gewinnt (z. B. ${need('g')} : ${need('g') - 1}).` : 'Ergebnis in gewonnenen Frames eintragen, z. B. 2 : 1. Wer nur einen Frame spielt, trägt 1 : 0 ein.'} Sobald eine Gruppe fertig ist, rücken ihre Weiterkommer direkt in die KO-Runde.</p>`;
   h += '<div class="groups">' + state.groups.map((g, gi) => groupCard(g, gi, A)).join('') + '</div>';
   return h;
 }
@@ -874,7 +897,7 @@ function groupCard(g, gi, A) {
     <header class="g-head"><h3>Gruppe ${g.name}</h3><span class="g-sub">${badge}${g.players.length} Spieler · Top ${A} weiter</span></header>
     <div class="tbl"><table class="stand"><thead><tr>
       <th class="c">#</th><th>Spieler</th><th class="n" title="Spiele">Sp</th><th class="n" title="Siege">S</th>
-      <th class="n" title="Niederlagen">N</th><th class="n" title="Frames">Fr.</th><th class="n" title="Frame-Differenz">+/−</th>
+      <th class="n" title="Niederlagen">N</th><th class="n" title="${SP().u}">${SP().ab}</th><th class="n" title="${SP().d}">+/−</th>
       ${canWrite ? '<th class="mv"><span class="sr">Reihenfolge ändern</span></th>' : ''}</tr></thead><tbody>`;
   const safe = safeIds(g);
   rows.forEach((r, i) => {
@@ -886,7 +909,7 @@ function groupCard(g, gi, A) {
   });
   h += '</tbody></table></div>';
   if (g.manual) h += `<p class="note">Reihenfolge von der Turnierleitung festgelegt.${canWrite ? ` <button class="link" data-act="auto" data-g="${gi}">Wieder automatisch sortieren</button>` : ''}</p>`;
-  else if (ties.length) h += ties.map(u => `<p class="note warn"><b>Gleichstand:</b> ${u.ids.map(id => esc(nameOf(id))).join(', ').replace(/, ([^,]*)$/, ' und $1')} – Siege, Frames und direkter Vergleich sind gleich. <b>Es muss ein Entscheidungsspiel gespielt werden.</b>${canWrite ? ' Danach die Reihenfolge mit ▲▼ festlegen, dann rücken die Plätze in die KO-Runde.' : ' Bis dahin bleibt der Platz in der KO-Runde offen.'}</p>`).join('');
+  else if (ties.length) h += ties.map(u => `<p class="note warn"><b>Gleichstand:</b> ${u.ids.map(id => esc(nameOf(id))).join(', ').replace(/, ([^,]*)$/, ' und $1')} – Siege, ${SP().u} und direkter Vergleich sind gleich. <b>Es muss ein Entscheidungsspiel gespielt werden.</b>${canWrite ? ' Danach die Reihenfolge mit ▲▼ festlegen, dann rücken die Plätze in die KO-Runde.' : ' Bis dahin bleibt der Platz in der KO-Runde offen.'}</p>`).join('');
   else if (done && canWrite && advOf() < g.players.length) h += `<p class="note">Gruppe fertig – die Top ${advOf()} stehen in der KO-Runde.</p>`;
   const list = sortedMatches(g), nOpen = list.filter(x => !x.p).length;
   h += '<ol class="matches">' + list.map((x, k) => {
@@ -895,9 +918,9 @@ function groupCard(g, gi, A) {
     const L = sw ? { id: m.b, s: m.sb, side: 'sb', suf: 'b' } : { id: m.a, s: m.sa, side: 'sa', suf: 'a' };
     const R = sw ? { id: m.a, s: m.sa, side: 'sa', suf: 'a' } : { id: m.b, s: m.sb, side: 'sb', suf: 'b' };
     const p = x.p, wa = p && L.s > R.s, wb = p && R.s > L.s;
-    const bad = m.sa != null && m.sb != null && m.sa === m.sb;
+    const bad = m.sa != null && m.sb != null && (m.sa === m.sb || !okScore(m.sa, m.sb, 'g'));
     const na = esc(nameOf(L.id)), nb = esc(nameOf(R.id));
-    const inp = (S, nm) => `<input id="g-${gi}-${mi}-${S.suf}" type="number" min="0" inputmode="numeric" data-kind="g" data-g="${gi}" data-m="${mi}" data-side="${S.side}" value="${S.s ?? ''}" aria-label="Frames ${nm}">`;
+    const inp = (S, nm) => `<input id="g-${gi}-${mi}-${S.suf}" type="number" min="0" inputmode="numeric" data-kind="g" data-g="${gi}" data-m="${mi}" data-side="${S.side}" value="${S.s ?? ''}" aria-label="${SP().u} ${nm}">`;
     // Nicht angetreten: wer fehlt (bezogen auf die Anzeige links/rechts)
     const absL = m.wo === 'both' || m.wo === L.suf, absR = m.wo === 'both' || m.wo === R.suf;
     const mid = m.wo
@@ -1066,7 +1089,7 @@ function koHTML() {
   const stale = staleScores(br);
   if (canWrite && stale.length) h += `<div class="banner warn">${stale.length === 1 ? 'Ein eingetragenes KO-Ergebnis passt' : `${stale.length} eingetragene KO-Ergebnisse passen`} nicht mehr zur aktuellen Paarung, weil sich eine Gruppe geändert hat: ${stale.map(x => `${x.round}: ${esc(x.s.pa != null ? nameOf(x.s.pa) : '?')} – ${esc(x.s.pb != null ? nameOf(x.s.pb) : '?')} ${x.s.sa ?? '–'}:${x.s.sb ?? '–'}`).join(' · ')}. Gespeichert bleibt es trotzdem und taucht wieder auf, sobald die Paarung wieder so steht. Ein neues Ergebnis im selben Spiel ersetzt es.</div>`;
   if (canWrite) h += `<div class="bar"><label class="check"><input type="checkbox" id="third" ${state.thirdPlace ? 'checked' : ''}> Spiel um Platz 3</label>
-    <span class="hint" style="margin:0">Frames eintragen – der Sieger rückt automatisch in die nächste Runde.</span></div>`;
+    <span class="hint" style="margin:0">${isDart() ? 'Gewonnene Legs eintragen – die Match-Länge (Best of) steht über jeder Runde.' : 'Frames eintragen'} – der Sieger rückt automatisch in die nächste Runde.</span></div>`;
   h += bracketHTML(br, canWrite);
   h += payoutHTML(br);
   if (poAny() || poPaidList().length) h += paidOutHTML(br);
@@ -1088,7 +1111,7 @@ function matchHTML(m, editable, r) {
     const seed = r === 0 && P.label ? `<span class="seed">${P.label}</span>` : '';
     const v = m[sk];
     const ctl = editable && !m.wo
-      ? `<input id="k-${m.key}-${side}" type="number" min="0" inputmode="numeric" data-kind="k" data-key="${m.key}" data-side="${sk}" data-pa="${m.A.id ?? ''}" data-pb="${m.B.id ?? ''}" value="${v ?? ''}" ${!both ? 'disabled' : ''} aria-label="Frames ${nm}">`
+      ? `<input id="k-${m.key}-${side}" type="number" min="0" inputmode="numeric" data-kind="k" data-key="${m.key}" data-side="${sk}" data-pa="${m.A.id ?? ''}" data-pb="${m.B.id ?? ''}" value="${v ?? ''}" ${!both ? 'disabled' : ''} aria-label="${SP().u} ${nm}">`
       : `<span class="sc">${v ?? ''}</span>`;
     const more = editable ? (side === 'a' && both ? `<button class="m-more${m.wo ? ' on' : ''}" data-act="wo-open" data-k="${wk}" aria-expanded="${woOpen === wk}" aria-label="Nicht angetreten eintragen" title="Nicht angetreten …">⋯</button>` : '<span class="m-more-sp"></span>') : '';
     return `<div class="row${isW ? ' w' : ''}${isL ? ' l' : ''}${abs ? ' na' : ''}">${seed}<span class="nm"${nm ? ` title="${nm}${abs ? ' – nicht angetreten' : ''}"` : ''}>${name}</span>${ctl}${more}</div>`;
@@ -1098,7 +1121,8 @@ function matchHTML(m, editable, r) {
     <button class="btn" data-act="wo-set" data-k="${wk}" data-who="b" data-pa="${m.A.id}" data-pb="${m.B.id}" aria-pressed="${m.wo === 'b'}">${esc(nameOf(m.B.id))}</button>
     ${m.wo ? `<button class="btn" data-act="wo-set" data-k="${wk}" data-who="" data-pa="${m.A.id}" data-pb="${m.B.id}">Zurücksetzen</button>` : ''}
     <small>Der Gegner kommt kampflos weiter.</small></div>` : '';
-  return `<div class="match${m.wo ? ' is-wo' : ''}">${rows}${pop}</div>`;
+  const kbad = editable && !m.wo && m.sa != null && m.sb != null && m.winner == null && m.A.id != null && m.B.id != null;
+  return `<div class="match${m.wo ? ' is-wo' : ''}${kbad ? ' bad' : ''}"${kbad && isDart() ? ` title="Best of ${boOf(koK(m.key))}: Der Sieger braucht genau ${need(koK(m.key))} Legs."` : ''}>${rows}${pop}</div>`;
 }
 /* ---------- Fristen ---------- */
 const WD = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
@@ -1136,12 +1160,12 @@ function bracketHTML(br, editable) {
     if (rd.length === 1) body = `<div class="pair"><div class="slot">${matchHTML(rd[0], editable, r)}</div></div>`;
     else for (let i = 0; i < rd.length; i += 2)
       body += `<div class="pair"><div class="slot">${matchHTML(rd[i], editable, r)}</div><div class="slot">${matchHTML(rd[i + 1], editable, r)}</div></div>`;
-    return `<div class="col${r < 3 ? ' has-next' : ''}${r > 0 ? ' has-prev' : ''}"><h4>${ROUND_NAMES[r]}</h4>${dlHTML('r' + r, true)}<div class="col-body">${body}</div></div>`;
+    return `<div class="col${r < 3 ? ' has-next' : ''}${r > 0 ? ' has-prev' : ''}"><h4>${ROUND_NAMES[r]}${boTag('r' + r)}</h4>${dlHTML('r' + r, true)}<div class="col-body">${body}</div></div>`;
   }).join('');
   const who = id => id != null ? esc(nameOf(id)) : '<span class="ph">steht noch aus</span>';
   let pod = `<div class="pod champ"><div class="lbl">Turniersieger</div><div class="who">${who(br.champion)}</div></div>
     <div class="pod"><div class="lbl">2. Platz</div><div class="who">${who(br.runnerUp)}</div></div>`;
-  if (state.thirdPlace) pod += `<div class="pod"><div class="lbl">Spiel um Platz 3${br.third.winner != null ? ' · Sieger: ' + esc(nameOf(br.third.winner)) : ''}</div>${matchHTML(br.third, editable, 1)}</div>`;
+  if (state.thirdPlace) pod += `<div class="pod"><div class="lbl">Spiel um Platz 3${isDart() ? ' · Best of ' + boOf('p3') : ''}${br.third.winner != null ? ' · Sieger: ' + esc(nameOf(br.third.winner)) : ''}</div>${matchHTML(br.third, editable, 1)}</div>`;
   return `<div class="bracket-scroll"><div class="bracket">${cols}</div></div><div class="podium">${pod}</div>`;
 }
 
@@ -1237,7 +1261,7 @@ function drawMatch(x, m, X, Y, w, rh, seeds) {
 }
 function drawBracket(x, br, logo) {
   const M = 80, top = 295, gap = 84, colW = (PW - 2 * M - gap * 3) / 4;
-  const hasDl = [0, 1, 2, 3].some(r => state.deadlines['r' + r]);
+  const hasDl = isDart() || [0, 1, 2, 3].some(r => state.deadlines['r' + r]);
   const poShow = !!(state.payout && state.payout.print && poAny()), PA = poShow ? state.payout.amounts : {};
   const poLine = (bx, v, y) => { if (!poShow || !v) return; x.font = `700 36px ${FD}`; spaced(x, 2); x.fillStyle = C.gold; x.fillText(money(v), bx + 34, y); spaced(x, 0); };
   const areaTop = top + (hasDl ? 104 : 76), areaH = hasDl ? 1042 : 1070, rh = 50;
@@ -1249,7 +1273,8 @@ function drawBracket(x, br, logo) {
     if (poShow) { const k = r === 0 ? 'p916' : r === 1 ? 'p58' : r === 2 && !state.thirdPlace ? 'p34' : null, v = k && PA[k];
       if (v) { x.font = `700 30px ${FD}`; spaced(x, 2); x.fillStyle = C.gold; x.textAlign = 'right'; x.fillText('JE ' + money(v), cx + colW, top + 24); x.textAlign = 'left'; spaced(x, 0); } }
     const dv = state.deadlines['r' + r];
-    if (dv) { x.font = `600 27px ${FB}`; x.fillStyle = C.muted; x.fillText(fit(x, 'Frist: ' + fmtDl(dv, true), colW), cx, top + 64); }
+    const sub = [isDart() ? 'Best of ' + boOf('r' + r) : '', dv ? 'Frist: ' + fmtDl(dv, true) : ''].filter(Boolean).join('  ·  ');
+    if (sub) { x.font = `600 27px ${FB}`; x.fillStyle = C.muted; x.fillText(fit(x, sub, colW), cx, top + 64); }
     x.fillStyle = C.mint; x.fillRect(cx, top + (hasDl ? 86 : 52), 70, 5);
     x.fillStyle = C.line; x.fillRect(cx + 70, top + (hasDl ? 87.5 : 53.5), colW - 70, 2);
     const seg = areaH / rd.length;
@@ -1286,7 +1311,7 @@ function drawBracket(x, br, logo) {
   x.fillText(fit(x, who(br.runnerUp), bw - 70), bx + 34, py + ph / 2 + 24);
   poLine(bx, PA.p2, py + ph - 30);
   if (state.thirdPlace) {
-    bx = box(2, 'Spiel um Platz 3', false);
+    bx = box(2, 'Spiel um Platz 3' + (isDart() ? ' · Best of ' + boOf('p3') : ''), false);
     drawMatch(x, br.third, bx + 34, py + 74, bw - 60, 44, false);
     if (poShow && (PA.p3 || PA.p4)) { x.font = `700 32px ${FD}`; spaced(x, 2); x.fillStyle = C.gold;
       x.fillText(fit(x, [PA.p3 ? '3.: ' + money(PA.p3) : '', PA.p4 ? '4.: ' + money(PA.p4) : ''].filter(Boolean).join('   ·   '), bw - 70), bx + 34, py + ph - 26); spaced(x, 0); }
@@ -1439,7 +1464,7 @@ function drawGroups(x) {
   x.textAlign = 'left'; x.font = `700 28px ${FD}`; spaced(x, 2); x.fillStyle = C.muted;
   let lx = M; const put = (t, col, font) => { x.font = font; x.fillStyle = col; x.fillText(t, lx, ly); lx += x.measureText(t).width; };
   put('PLATZIERUNG IN DER GRUPPE NACH:  ', C.muted, `700 28px ${FD}`); spaced(x, 0);
-  put('Siege  →  +/− (Frame-Differenz)  →  gewonnene Frames  →  direkter Vergleich', C.ink, `500 28px ${FB}`);
+  put(`Siege  →  +/− (${SP().d})  →  gewonnene ${SP().u}  →  direkter Vergleich`, C.ink, `500 28px ${FB}`);
   x.textAlign = 'right'; x.font = `500 28px ${FB}`; x.fillStyle = C.muted;
   const leg2 = '✓ sicher weiter  ·  n. a. = nicht angetreten';
   if (lx + 60 + x.measureText(leg2).width < PW - M) x.fillText(leg2, PW - M, ly);
@@ -2088,6 +2113,7 @@ const SHELL = `<div class="app">
 function tourFormHTML() {
   const edit = tourForm === 'edit';
   const name = edit ? state.title : '', em = edit ? (state.emoji || '') : '🏆';
+  const sp = edit ? sportOf() : 'billard', bo = Object.assign({}, BO_DEF, edit && state.bo ? state.bo : {});
   return `<div class="tform">
     <div class="tform-row">
       <input type="text" id="tfName" value="${esc(name)}" placeholder="Name, z. B. APD Dart-Cup" autocomplete="off" aria-label="Turniername">
@@ -2103,6 +2129,15 @@ function tourFormHTML() {
     <div class="tform-row prize-row">
       <label class="lbl" for="tfPrize" style="margin:0;align-self:center">Prize Pool</label>
       <input type="text" id="tfPrize" value="${esc(edit ? (state.prize || '') : '')}" maxlength="40" placeholder="optional, z. B. $50.000" autocomplete="off">
+    </div>
+    <div class="tform-row sport-row">
+      <label class="lbl" for="tfSport" style="margin:0;align-self:center">Sportart</label>
+      <select id="tfSport">${Object.entries(SPORTS).map(([k, v]) => `<option value="${k}"${k === sp ? ' selected' : ''}>${v.em} ${v.name}</option>`).join('')}</select>
+    </div>
+    <div class="bo-row" id="tfBo"${sp === 'dart' ? '' : ' hidden'}>
+      <span class="lbl" style="margin:0">Match-Länge (Legs)</span>
+      <div class="bo-grid">${BO_KEYS.map(([k, l]) => `<label><span>${l}</span><select id="tfBo-${k}">${[1, 3, 5, 7, 9, 11].map(n => `<option value="${n}"${n === bo[k] ? ' selected' : ''}>Best of ${n}</option>`).join('')}</select></label>`).join('')}</div>
+      <p class="hint" style="margin:0">Best of 5 = wer zuerst 3 Legs gewinnt, ist weiter.${edit ? ' Schon eingetragene Ergebnisse, die nicht zur neuen Länge passen, werden rot markiert und zählen erst nach Korrektur.' : ''}</p>
     </div>
     <p class="hint" style="margin:-4px 0 0">Preisgeld des Turniers. Leer lassen, wenn es keins gibt – dann taucht es auch im Ausdruck nicht auf.${edit && data.konto.entries.length ? ` Kasse: ${money(kReserve().bal)} · frei verfügbar nach allen Prize Pools ${money(kReserve().free)}.` : ''}</p>
   </div>`;
@@ -2270,7 +2305,7 @@ document.addEventListener('click', e => {
       if (!state.ko || typeof state.ko !== 'object') state.ko = { scores: {} };
       if (!state.ko.scores) state.ko.scores = {};
       if (!who) state.ko.scores[key] = { pa, pb, sa: null, sb: null };
-      else { const F = woFrames(); state.ko.scores[key] = { pa, pb, sa: who === 'a' ? 0 : F, sb: who === 'b' ? 0 : F, wo: who }; }
+      else { const F = woFrames(koK(key)); state.ko.scores[key] = { pa, pb, sa: who === 'a' ? 0 : F, sb: who === 'b' ? 0 : F, wo: who }; }
     }
     woOpen = null; changed(); rerender();
   }
@@ -2322,9 +2357,12 @@ document.addEventListener('click', e => {
   else if (act === 'tour-save') {
     const name = ($('#tfName') && $('#tfName').value.trim()) || '', em = cleanEmoji($('#tfEmoji') && $('#tfEmoji').value);
     const prize = (($('#tfPrize') && $('#tfPrize').value) || '').trim().slice(0, 40);
-    if (tourForm === 'edit') { state.title = name || state.title; state.emoji = em; state.prize = prize; }
+    const sport = ($('#tfSport') && $('#tfSport').value) || 'billard';
+    const bo = {}; BO_KEYS.forEach(([k]) => { const el = $('#tfBo-' + k); bo[k] = el ? +el.value : BO_DEF[k]; });
+    if (tourForm === 'edit') { state.title = name || state.title; state.emoji = em; state.prize = prize; state.sport = sport; if (sport === 'dart') state.bo = bo; }
     else {
       const t = defaults(name || 'Neues Turnier'); t.emoji = em; t.prize = prize; t.id = 't' + Date.now().toString(36);
+      t.sport = sport; if (sport === 'dart') t.bo = bo;
       data.tournaments.push(t); state = t; ls.set('apd-tour', t.id); tab = 'setup';
     }
     tourForm = null; changed(); render();
@@ -2384,6 +2422,14 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && tourForm) { tourForm = null; render(); }
 });
 document.addEventListener('change', e => {
+  if (e.target && e.target.id === 'tfSport') {
+    const v = e.target.value, box = $('#tfBo'), inp = $('#tfEmoji');
+    if (box) box.hidden = v !== 'dart';
+    if (inp && (!inp.value || inp.value === '🏆' || Object.values(SPORTS).some(x => x.em === inp.value))) {
+      inp.value = SPORTS[v].em; document.querySelectorAll('.em-btn').forEach(x => x.setAttribute('aria-pressed', x.dataset.e === inp.value));
+    }
+    return;
+  }
   const t = e.target;
   if (t.dataset.kind === 'ex-what') { exWhat = t.value; return; }
   if (t.dataset.kind === 'ex-fmt') { exFmt = t.value; return; }
