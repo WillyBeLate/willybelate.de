@@ -556,6 +556,8 @@ function normalize(data) {
   if (!Array.isArray(data.tournaments)) data = { tournaments: [Object.assign(defaults(), data)] };
   data.tournaments = data.tournaments.map(t => Object.assign(defaults(), t));
   data.tournaments.forEach(t => { if (!t.deadlines || typeof t.deadlines !== 'object') t.deadlines = {}; });
+  // Symbol folgt immer der Sportart
+  data.tournaments.forEach(t => { const em = { billard: '🎱', dart: '🎯' }; if (!em[t.sport]) t.sport = 'billard'; t.emoji = em[t.sport]; });
   data.tournaments.forEach((t, i) => { if (!t.id) t.id = 't' + (i + 1); });
   data.tournaments.forEach(t => { if (t.ko && typeof t.ko === 'object' && !t.ko.scores) t.ko.scores = {}; });
   data.bingo = Object.assign(bingoDefaults(), data.bingo || {});
@@ -2141,19 +2143,13 @@ function tourFormHTML() {
       <button class="btn primary" data-act="tour-save">${edit ? 'Speichern' : 'Anlegen'}</button>
       <button class="btn" data-act="tour-cancel">Abbrechen</button>
     </div>
-    <div class="emojis" role="group" aria-label="Symbol">
-      <span class="lbl" style="margin:0">Symbol</span>
-      ${EMOJIS.map(e => `<button class="em-btn" data-act="emoji" data-e="${e}" aria-pressed="${e === em}" aria-label="${e}">${e}</button>`).join('')}
-      <button class="em-btn none" data-act="emoji" data-e="" aria-pressed="${!em}">Keins</button>
-      <input type="text" id="tfEmoji" class="em-in" value="${esc(em)}" maxlength="8" placeholder="🙂" aria-label="Eigenes Emoji" autocomplete="off">
+    <div class="tform-row sport-row">
+      <label class="lbl" for="tfSport" style="margin:0;align-self:center">Sportart</label>
+      <select id="tfSport">${Object.entries(SPORTS).map(([k, v]) => `<option value="${k}"${k === sp ? ' selected' : ''}>${v.em} ${v.name}</option>`).join('')}</select>
     </div>
     <div class="tform-row prize-row">
       <label class="lbl" for="tfPrize" style="margin:0;align-self:center">Prize Pool</label>
       <input type="text" id="tfPrize" value="${esc(edit ? (state.prize || '') : '')}" maxlength="40" placeholder="optional, z. B. $50.000" autocomplete="off">
-    </div>
-    <div class="tform-row sport-row">
-      <label class="lbl" for="tfSport" style="margin:0;align-self:center">Sportart</label>
-      <select id="tfSport">${Object.entries(SPORTS).map(([k, v]) => `<option value="${k}"${k === sp ? ' selected' : ''}>${v.em} ${v.name}</option>`).join('')}</select>
     </div>
     <div class="bo-row" id="tfBo"${sp === 'dart' ? '' : ' hidden'}>
       <span class="lbl" style="margin:0">Match-Länge (Legs)</span>
@@ -2376,9 +2372,9 @@ document.addEventListener('click', e => {
     document.querySelectorAll('.em-btn').forEach(x => x.setAttribute('aria-pressed', x.dataset.e === e2));
   }
   else if (act === 'tour-save') {
-    const name = ($('#tfName') && $('#tfName').value.trim()) || '', em = cleanEmoji($('#tfEmoji') && $('#tfEmoji').value);
+    const name = ($('#tfName') && $('#tfName').value.trim()) || '';
     const prize = (($('#tfPrize') && $('#tfPrize').value) || '').trim().slice(0, 40);
-    const sport = ($('#tfSport') && $('#tfSport').value) || 'billard';
+    const sport = ($('#tfSport') && $('#tfSport').value) || 'billard', em = SPORTS[sport].em;
     const bo = {}; BO_KEYS.forEach(([k]) => { const el = $('#tfBo-' + k); bo[k] = el ? +el.value : BO_DEF[k]; });
     if (tourForm === 'edit') { state.title = name || state.title; state.emoji = em; state.prize = prize; state.sport = sport; if (sport === 'dart') state.bo = bo; }
     else {
@@ -2444,11 +2440,7 @@ document.addEventListener('keydown', e => {
 });
 document.addEventListener('change', e => {
   if (e.target && e.target.id === 'tfSport') {
-    const v = e.target.value, box = $('#tfBo'), inp = $('#tfEmoji');
-    if (box) box.hidden = v !== 'dart';
-    if (inp && (!inp.value || inp.value === '🏆' || Object.values(SPORTS).some(x => x.em === inp.value))) {
-      inp.value = SPORTS[v].em; document.querySelectorAll('.em-btn').forEach(x => x.setAttribute('aria-pressed', x.dataset.e === inp.value));
-    }
+    const box = $('#tfBo'); if (box) box.hidden = e.target.value !== 'dart';
     return;
   }
   const t = e.target;
