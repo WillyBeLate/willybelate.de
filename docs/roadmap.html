@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bot-Roadmap – WillyBeLate</title>
+  <meta name="description" content="Roadmap des Community-Bots für Discord und Twitch: was live ist, was in Arbeit ist und was auf eine Hardware-Lösung wartet.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0A0B12">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --bg: #0A0B12;
+      --panel: #12141F;
+      --card: #1A1D2B;
+      --card-hover: #20243A;
+      --line: #262A3D;
+      --text: #ECEEF6;
+      --muted: #9AA0B8;
+      --live: #3DDC97;
+      --test: #5AA9FF;
+      --plan: #FFB547;
+      --wait: #A78BFA;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1320px; margin: 0 auto; padding: 0 16px; }
+
+    header.top { border-bottom: 1px solid var(--line); }
+    header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .brand { font-weight: 800; text-decoration: none; letter-spacing: .2px; }
+    .brand span { color: var(--live); }
+    header.top nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+    header.top nav a:hover { color: var(--text); }
+
+    .hero { padding: 36px 0 8px; }
+    .hero h1 { margin: 0 0 4px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; }
+    .hero p { margin: 0; color: var(--muted); }
+
+    /* Fortschritt */
+    .progress {
+      margin: 24px 0 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .ring { width: 132px; height: 132px; position: relative; }
+    .ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .ring .bg { stroke: var(--line); }
+    .ring .fg { stroke: var(--live); stroke-linecap: round; transition: stroke-dashoffset .6s ease; }
+    .ring .val {
+      position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+    }
+    .ring .val b { font-size: 32px; line-height: 1; display: block; }
+    .ring .val small { color: var(--muted); font-size: 12px; }
+    .progress h2 { margin: 0 0 6px; font-size: 18px; }
+    .progress .note { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+    .bar { display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: var(--line); }
+    .bar i { display: block; height: 100%; }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font-size: 13px; color: var(--muted); }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+    /* Board */
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      padding-bottom: 40px;
+      align-items: start;
+    }
+    .col {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+    }
+    .col-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 4px 4px 12px; border-bottom: 3px solid var(--c); margin-bottom: 12px;
+    }
+    .col-head h3 { margin: 0; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+    .col-head .count {
+      font-size: 12px; font-weight: 700; color: var(--bg); background: var(--c);
+      border-radius: 999px; padding: 1px 9px;
+    }
+    .col-sub { margin: -4px 4px 12px; font-size: 12.5px; color: var(--muted); }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--c);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+    }
+    .card:last-child { margin-bottom: 0; }
+    .card:hover { background: var(--card-hover); }
+    .card h4 { margin: 0 0 4px; font-size: 14.5px; }
+    .card p { margin: 0; color: var(--muted); font-size: 13.5px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .tag {
+      font-size: 11px; font-weight: 600; letter-spacing: .2px;
+      padding: 2px 8px; border-radius: 999px; background: #0F1120; color: var(--muted); border: 1px solid var(--line);
+    }
+    .tag-test { color: var(--test); border-color: var(--test); }
+    .empty { color: var(--muted); font-size: 13.5px; padding: 10px 4px; font-style: italic; }
+
+    .s-live { --c: var(--live); }
+    .s-plan { --c: var(--plan); }
+    .s-wait { --c: var(--wait); }
+
+    footer.bottom { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    footer.bottom .wrap { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
+    footer.bottom nav { display: flex; gap: 16px; }
+    footer.bottom a { text-decoration: none; }
+    footer.bottom a:hover { color: var(--text); }
+
+    @media (max-width: 900px) { .board { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) {
+      .board { grid-template-columns: 1fr; }
+      .progress { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+      .legend { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/">Willy<span>BeLate</span></a>
+      <nav><a href="/">Zur Startseite</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Bot-Roadmap</h1>
+      <p>Community-Bot für Discord und Twitch · Stand: <span id="stand">17.11.2026</span></p>
+    </section>
+
+    <section class="progress" aria-label="Fortschritt">
+      <div class="ring">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="bg" cx="60" cy="60" r="52" fill="none" stroke-width="12"></circle>
+          <circle class="fg" id="ring" cx="60" cy="60" r="52" fill="none" stroke-width="12"
+                  stroke-dasharray="326.73" stroke-dashoffset="326.73"></circle>
+        </svg>
+        <div class="val"><div><b id="pct">0 %</b><small>live</small></div></div>
+      </div>
+      <div>
+        <h2>Fortschritt</h2>
+        <p class="note" id="pct-note">0 von 17 Funktionen sind fertig und live. Es zählt nur, was wirklich im Einsatz ist.</p>
+        <div class="bar" id="bar" role="img" aria-label="Verteilung nach Status"></div>
+        <div class="legend">
+          <span><i class="dot" style="background:var(--live)"></i>Live <b id="n-live">0</b></span>
+          <span><i class="dot" style="background:var(--plan)"></i>In Arbeit / geplant <b id="n-plan">13</b></span>
+          <span><i class="dot" style="background:var(--wait)"></i>Wartet auf Hardware-Lösung <b id="n-wait">4</b></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="board">
+      <!-- LIVE -->
+      <div class="col s-live" data-col="live">
+        <div class="col-head"><h3><i class="dot" style="background:var(--live)"></i>Live</h3><span class="count">0</span></div>
+        <p class="col-sub">Fertig und im Einsatz.</p>
+        <div class="empty">Noch nichts – die ersten Funktionen werden gerade getestet.</div>
+      </div>
+
+      <!-- GEPLANT -->
+      <div class="col s-plan" data-col="plan">
+        <div class="col-head"><h3><i class="dot" style="background:var(--plan)"></i>In Arbeit / geplant</h3><span class="count">13</span></div>
+        <p class="col-sub">Gebaut und im Test oben, danach ungefähr in dieser Reihenfolge.</p>
+        <article class="card s-plan" data-status="plan">
+          <h4>Grundgerüst und Einrichtung</h4>
+          <p>Bot läuft; Admins richten Kanäle und Rollen per <code>/einrichten</code> ein.</p>
+          <div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Discord</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Streamer-Zentrale</h4>
+          <p>Alle mit der Rolle „Streamer“ erscheinen automatisch. Eigene Social-Links eintragen, Ankündigungen und #linktree selbst an- oder ausschalten. Jeder ändert nur seine eigenen Daten.</p>
+          <div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Discord</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>#linktree automatisch</h4>
+          <p>Eine gepflegte „Social Links“-Nachricht pro Streamer.</p>
+          <div class="tags"><span class="tag">Discord</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Mehrere Streamer-Kanäle</h4>
+          <p>Alles wird pro Twitch-Kanal getrennt gebaut.</p>
+          <div class="tags"><span class="tag">Twitch</span><span class="tag">Discord</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Live-Ankündigungen und Rolle „Live“</h4>
+          <p>Ankündigung beim Stream-Start, Rolle „Live“ solange gestreamt wird.</p>
+          <div class="tags"><span class="tag">Twitch</span><span class="tag">Discord</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Ankündigungen anpassen</h4>
+          <p>Eigene Texte, eigene Ping-Rolle, Vorschau.</p>
+          <div class="tags"><span class="tag">Discord</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Twitch-Rollen in Discord</h4>
+          <p>VIPs und Mods bekommen passende Discord-Rollen (Verknüpfung per Code im Twitch-Chat).</p>
+          <div class="tags"><span class="tag">Twitch</span><span class="tag">Discord</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>YouTube-Ankündigungen</h4>
+          <p>Neue Videos und Shorts automatisch ankündigen.</p>
+          <div class="tags"><span class="tag">YouTube</span><span class="tag">Discord</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Chat-Befehle</h4>
+          <p>Standard-Befehle (Socials, Uptime, Lurk, Zitate, Zähler …) und eigene Befehle – je Kanal einstellbar, anfangs aus.</p>
+          <div class="tags"><span class="tag">Twitch</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Timer</h4>
+          <p>Regelmäßige Hinweise im Chat, nur wenn live und genug los ist.</p>
+          <div class="tags"><span class="tag">Twitch</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Shoutouts</h4>
+          <p><code>!so</code> mit offiziellem Twitch-Shoutout und eigenem Text.</p>
+          <div class="tags"><span class="tag">Twitch</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Clips per Befehl</h4>
+          <p><code>!clip</code> erstellt einen Clip und postet den Link.</p>
+          <div class="tags"><span class="tag">Twitch</span></div>
+        </article>
+        <article class="card s-plan" data-status="plan">
+          <h4>Giveaways</h4>
+          <p>Start, Teilnahme per Stichwort, fair gezogene Gewinner – im Chat und in Discord.</p>
+          <div class="tags"><span class="tag">Twitch</span><span class="tag">Discord</span></div>
+        </article>
+      </div>
+
+      <!-- WARTET -->
+      <div class="col s-wait" data-col="wait">
+        <div class="col-head"><h3><i class="dot" style="background:var(--wait)"></i>Wartet auf Hardware-Lösung</h3><span class="count">4</span></div>
+        <p class="col-sub">Braucht einen Bot, der rund um die Uhr läuft.</p>
+        <article class="card s-wait" data-status="wait">
+          <h4>Weitere Streamer-Kanäle freischalten</h4>
+          <p>Chat-Bot auch in den Kanälen der anderen Streamer.</p>
+          <div class="tags"><span class="tag">Twitch</span></div>
+        </article>
+        <article class="card s-wait" data-status="wait">
+          <h4>Web-Dashboard</h4>
+          <p>Login mit Twitch, eigene Einstellungen bequem im Browser.</p>
+          <div class="tags"><span class="tag">Web</span></div>
+        </article>
+        <article class="card s-wait" data-status="wait">
+          <h4>Live-Übersicht</h4>
+          <p>Wer aus der Pixelbude gerade live ist.</p>
+          <div class="tags"><span class="tag">Web</span><span class="tag">Discord</span></div>
+        </article>
+        <article class="card s-wait" data-status="wait">
+          <h4>Stream-Rückblick</h4>
+          <p>Nach jedem Stream die Twitch-Zahlen plus Extras: Chat-Höhepunkte, Stammgäste, Befehle, Clips.</p>
+          <div class="tags"><span class="tag">Web</span><span class="tag">Twitch</span></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom">
+    <div class="wrap">
+      <span>&copy; <span id="year">2026</span> WillyBeLate</span>
+      <nav aria-label="Rechtliches">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Zählt die Karten je Status und berechnet den Fortschritt.
+    // Zum Pflegen nur Karten verschieben bzw. data-status ändern (live | plan | wait).
+    (function () {
+      var order = ["live", "plan", "wait"];
+      var colors = { live: "var(--live)", plan: "var(--plan)", wait: "var(--wait)" };
+      var n = {}, total = 0;
+      order.forEach(function (s) {
+        n[s] = document.querySelectorAll('.card[data-status="' + s + '"]').length;
+        total += n[s];
+        var el = document.getElementById("n-" + s); if (el) el.textContent = n[s];
+        var col = document.querySelector('.col[data-col="' + s + '"] .count'); if (col) col.textContent = n[s];
+      });
+      var pct = total ? Math.round(n.live / total * 100) : 0;
+      document.getElementById("pct").textContent = pct + " %";
+      document.getElementById("pct-note").textContent =
+        n.live + " von " + total + " Funktionen sind fertig und live. Es zählt nur, was wirklich im Einsatz ist.";
+      var C = 2 * Math.PI * 52;
+      document.getElementById("ring").style.strokeDashoffset = (C * (1 - pct / 100)).toFixed(2);
+      var bar = document.getElementById("bar");
+      order.forEach(function (s) {
+        if (!n[s]) return;
+        var i = document.createElement("i");
+        i.style.width = (n[s] / total * 100) + "%";
+        i.style.background = colors[s];
+        i.title = s;
+        bar.appendChild(i);
+      });
+      var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
