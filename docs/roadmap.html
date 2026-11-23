@@ -140,9 +140,19 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 16px 20px 20px;
+      padding: 16px 20px;
     }
-    .changelog h2 { margin: 0 0 4px; font-size: 18px; }
+    .changelog h2 { margin: 0; font-size: 18px; }
+    .changelog-head {
+      list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      border-radius: 8px;
+    }
+    .changelog-head::-webkit-details-marker { display: none; }
+    .changelog-head:focus-visible { outline: 2px solid var(--test); outline-offset: 4px; }
+    .changelog-titles { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+    .changelog-latest { color: var(--muted); font-size: 14px; }
+    .changelog-box[open] > .changelog-head { margin-bottom: 8px; }
+    .changelog-box[open] > .changelog-head > .chev { transform: rotate(-135deg); margin-top: 4px; }
     .changelog .note { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
     .log { border-top: 1px solid var(--line); }
     .log:last-of-type { border-bottom: 1px solid var(--line); }
@@ -227,11 +237,18 @@
       </div>
     </section>
 
-    <!-- CHANGELOG: neuester Tag oben. Bei jeder Änderung der Karten einen Eintrag ergänzen (oder den des Tages erweitern)
+    <!-- CHANGELOG: ganzer Bereich einklappbar (details.changelog-box, standardmäßig zu); neuester Tag oben, direkt unter <p class="note">. Bei jeder Änderung der Karten einen Eintrag ergänzen (oder den des Tages erweitern)
          und „Neueste“ nur am obersten Eintrag lassen. Arten: chg-test (Im Test), chg-neu (Neu), chg-live (Live),
          chg-wait (Wartet), chg-info (Geändert/Zusammengefasst/Seite). -->
-    <section class="changelog" aria-labelledby="log-title">
-      <h2 id="log-title">Was ist neu?</h2>
+    <section class="changelog" aria-label="Was ist neu?">
+      <details class="changelog-box">
+      <summary class="changelog-head">
+        <span class="changelog-titles">
+          <h2>Was ist neu?</h2>
+          <span class="changelog-latest" id="log-latest"></span>
+        </span>
+        <span class="chev" aria-hidden="true"></span>
+      </summary>
       <p class="note">Die Roadmap wird regelmäßig aktualisiert, in der Regel einmal am Tag. Hier steht, was sich an welchem Tag geändert hat – zum Aufklappen.</p>
       <details class="log">
         <summary><span class="log-date">23.11.2026</span><span class="log-title">9 Funktionen neu im Test</span><span class="log-new">Neueste</span><span class="chev" aria-hidden="true"></span></summary>
@@ -276,6 +293,7 @@
           <li><span class="chg chg-info">Seite</span><span>Roadmap online mit 17 Funktionen; Grundgerüst und Einrichtung sowie Streamer-Zentrale im Test</span></li>
           <li><span class="chg chg-info">Seite</span><span>Karten aufklappbar: Erläuterung erst nach Klick</span></li>
         </ul>
+      </details>
       </details>
     </section>
 
@@ -436,6 +454,12 @@
         i.title = s;
         bar.appendChild(i);
       });
+      // Changelog zugeklappt: neuesten Eintrag in der Kopfzeile anzeigen.
+      var first = document.querySelector(".log .log-date"), latest = document.getElementById("log-latest");
+      if (first && latest) {
+        var t = first.parentNode.querySelector(".log-title");
+        latest.textContent = "Zuletzt: " + first.textContent + (t ? " · " + t.textContent : "");
+      }
       var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
     })();
   </script>
