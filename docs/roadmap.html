@@ -134,6 +134,50 @@
     .s-plan { --c: var(--plan); }
     .s-wait { --c: var(--wait); }
 
+    /* Changelog: ein aufklappbarer Eintrag je Tag, neuester oben */
+    .changelog {
+      margin: 0 0 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 20px 20px;
+    }
+    .changelog h2 { margin: 0 0 4px; font-size: 18px; }
+    .changelog .note { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+    .log { border-top: 1px solid var(--line); }
+    .log:last-of-type { border-bottom: 1px solid var(--line); }
+    .log summary {
+      list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px;
+      padding: 12px 4px; border-radius: 6px;
+    }
+    .log summary::-webkit-details-marker { display: none; }
+    .log summary:hover { background: var(--card); }
+    .log summary:focus-visible { outline: 2px solid var(--test); outline-offset: 2px; }
+    .log-date { font-weight: 700; font-variant-numeric: tabular-nums; min-width: 88px; }
+    .log-title { flex: 1; color: var(--muted); font-size: 14px; }
+    .log-new {
+      font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 999px;
+      background: var(--test); color: var(--bg);
+    }
+    .log .chev { margin-top: 0; }
+    .log[open] .chev { transform: rotate(-135deg); margin-top: 4px; }
+    .log ul { list-style: none; margin: 0; padding: 0 4px 14px; display: grid; gap: 8px; }
+    .log li { display: flex; gap: 10px; align-items: baseline; font-size: 14px; }
+    .chg {
+      flex: none; font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 999px;
+      border: 1px solid currentColor; min-width: 92px; text-align: center;
+    }
+    .chg-test { color: var(--test); }
+    .chg-neu { color: var(--plan); }
+    .chg-live { color: var(--live); }
+    .chg-wait { color: var(--wait); }
+    .chg-info { color: var(--muted); }
+    @media (max-width: 640px) {
+      .log-date { min-width: 0; }
+      .log li { flex-direction: column; gap: 4px; }
+      .chg { min-width: 0; }
+    }
+
     footer.bottom { border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
     footer.bottom .wrap { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; padding-top: 18px; padding-bottom: 18px; }
     footer.bottom nav { display: flex; gap: 16px; }
@@ -181,6 +225,58 @@
           <span><i class="dot" style="background:var(--wait)"></i>Wartet auf Hardware-Lösung <b id="n-wait">4</b></span>
         </div>
       </div>
+    </section>
+
+    <!-- CHANGELOG: neuester Tag oben. Bei jeder Änderung der Karten einen Eintrag ergänzen (oder den des Tages erweitern)
+         und „Neueste“ nur am obersten Eintrag lassen. Arten: chg-test (Im Test), chg-neu (Neu), chg-live (Live),
+         chg-wait (Wartet), chg-info (Geändert/Zusammengefasst/Seite). -->
+    <section class="changelog" aria-labelledby="log-title">
+      <h2 id="log-title">Was ist neu?</h2>
+      <p class="note">Die Roadmap wird regelmäßig aktualisiert, in der Regel einmal am Tag. Hier steht, was sich an welchem Tag geändert hat – zum Aufklappen.</p>
+      <details class="log">
+        <summary><span class="log-date">23.11.2026</span><span class="log-title">9 Funktionen neu im Test</span><span class="log-new">Neueste</span><span class="chev" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span class="chg chg-test">Im Test</span><span>Web-Dashboard</span></li>
+          <li><span class="chg chg-test">Im Test</span><span>Verbindungs-Check und Probelauf</span></li>
+          <li><span class="chg chg-test">Im Test</span><span>Chat-Schutz und Chat-Extras</span></li>
+          <li><span class="chg chg-test">Im Test</span><span>Eigene Ping-Rollen</span></li>
+          <li><span class="chg chg-test">Im Test</span><span>Eigene Daten herunterladen und löschen</span></li>
+          <li><span class="chg chg-test">Im Test</span><span>Gemeinsamer Kollab-Post (bisher Teil von „Schlauere Ankündigungen“)</span></li>
+          <li><span class="chg chg-test">Im Test</span><span>Wartungsmodus, Änderungsverlauf mit Rückgängig und Befehle aus anderen Bots übernehmen (bisher Teil von „Dashboard-Komfort“)</span></li>
+          <li><span class="chg chg-info">Aufgeteilt</span><span>„Schlauere Ankündigungen“ heißt jetzt „Mitwachsende Live-Ankündigung“ (noch geplant); in „Dashboard-Komfort“ bleiben Suche, Einstellungen kopieren, Raid-Liste und Handy-Schnellleiste</span></li>
+          <li><span class="chg chg-info">Seite</span><span>Neuer Bereich „Was ist neu?“ mit diesem Changelog</span></li>
+        </ul>
+      </details>
+      <details class="log">
+        <summary><span class="log-date">20.11.2026</span><span class="log-title">TikTok im Test, 6 neue Karten</span><span class="chev" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span class="chg chg-test">Im Test</span><span>TikTok-Ankündigungen</span></li>
+          <li><span class="chg chg-neu">Neu</span><span>Verbindungs-Check und Probelauf</span></li>
+          <li><span class="chg chg-neu">Neu</span><span>Chat-Schutz und Chat-Extras</span></li>
+          <li><span class="chg chg-neu">Neu</span><span>Eigene Ping-Rollen</span></li>
+          <li><span class="chg chg-neu">Neu</span><span>Eigene Daten herunterladen und löschen</span></li>
+          <li><span class="chg chg-neu">Neu</span><span>Schlauere Ankündigungen</span></li>
+          <li><span class="chg chg-neu">Neu</span><span>Dashboard-Komfort</span></li>
+          <li><span class="chg chg-info">Geändert</span><span>Web-Dashboard wird der Hauptort für alle Streamer-Einstellungen, Discord bleibt Kurzversion</span></li>
+        </ul>
+      </details>
+      <details class="log">
+        <summary><span class="log-date">18.11.2026</span><span class="log-title">Fast alles im Test, Chat-Karten zusammengefasst</span><span class="chev" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span class="chg chg-test">Im Test</span><span>#linktree automatisch, Mehrere Streamer-Kanäle, Live-Ankündigungen und Rolle „Live“, Ankündigungen anpassen, Twitch-Rollen in Discord, YouTube-Ankündigungen</span></li>
+          <li><span class="chg chg-info">Zusammengefasst</span><span>Chat-Befehle, Timer, Shoutouts, Clips per Befehl und Giveaways sind jetzt eine Karte: „Twitch-Chat-Bot“ (im Test)</span></li>
+          <li><span class="chg chg-neu">Neu</span><span>TikTok-Ankündigungen – für alle Streamer</span></li>
+          <li><span class="chg chg-info">Verschoben</span><span>Web-Dashboard von „Wartet auf Hardware-Lösung“ nach „In Arbeit / geplant“</span></li>
+          <li><span class="chg chg-wait">Wartet</span><span>Neu: Bot rund um die Uhr (Voraussetzung für die lila Spalte)</span></li>
+        </ul>
+      </details>
+      <details class="log">
+        <summary><span class="log-date">17.11.2026</span><span class="log-title">Roadmap gestartet</span><span class="chev" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span class="chg chg-info">Seite</span><span>Roadmap online mit 17 Funktionen; Grundgerüst und Einrichtung sowie Streamer-Zentrale im Test</span></li>
+          <li><span class="chg chg-info">Seite</span><span>Karten aufklappbar: Erläuterung erst nach Klick</span></li>
+        </ul>
+      </details>
     </section>
 
     <section class="board">
@@ -256,12 +352,28 @@
           <p>Jeder Streamer kann alle seine Daten herunterladen oder komplett löschen lassen.</p>
         </details>
         <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Schlauere Ankündigungen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
-          <p>Die Live-Ankündigung wächst mit (Titel- oder Spielwechsel, danach „war live“ mit Dauer und VOD). Streamen mehrere aus der Pixelbude zusammen, gibt es auf Wunsch einen gemeinsamen Post – nur wenn alle zustimmen.</p>
+          <summary><span class="card-head"><h4>Gemeinsamer Kollab-Post</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
+          <p>Streamen mehrere aus der Pixelbude zusammen (gleiches Spiel und gemeinsamer Chat, Erwähnung im Titel oder ein vereinbartes Stichwort), schlägt der Bot einen gemeinsamen Post vor. Gepostet wird nur, wenn alle zustimmen – die Zustimmung läuft über das Dashboard. Je Streamer einstellbar, anfangs aus.</p>
+        </details>
+        <details class="card s-plan" data-status="plan">
+          <summary><span class="card-head"><h4>Wartungsmodus</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span><span class="tag">Discord</span></div></summary>
+          <p>Ankündigungen, Chat-Befehle, Timer und Chat-Schutz auf Knopfdruck pausieren – für den eigenen Kanal oder (Admins) für alle, auf Wunsch mit Endzeit und Grund. Danach wird nichts nachgeholt, es gibt also keine Flut.</p>
+        </details>
+        <details class="card s-plan" data-status="plan">
+          <summary><span class="card-head"><h4>Änderungsverlauf mit Rückgängig</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span></div></summary>
+          <p>Jede Änderung an Einstellungen, egal ob im Dashboard oder in Discord, steht im Verlauf: wer, wann, vorher und nachher. Einzelne Änderungen lassen sich mit einem Klick zurücksetzen.</p>
+        </details>
+        <details class="card s-plan" data-status="plan">
+          <summary><span class="card-head"><h4>Befehle aus anderen Bots übernehmen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Twitch</span><span class="tag">Web</span></div></summary>
+          <p>Befehle und Timer aus Nightbot, StreamElements oder Moobot einfügen, Vorschau ansehen und auswählen. Platzhalter werden übersetzt, alles kommt erst einmal ausgeschaltet an.</p>
+        </details>
+        <details class="card s-plan" data-status="plan">
+          <summary><span class="card-head"><h4>Mitwachsende Live-Ankündigung</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
+          <p>Die Live-Ankündigung wächst mit: Titel- oder Spielwechsel werden nachgetragen, nach dem Stream wird daraus „war live“ mit Dauer und Link zum VOD.</p>
         </details>
         <details class="card s-plan" data-status="plan">
           <summary><span class="card-head"><h4>Dashboard-Komfort</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span></div></summary>
-          <p>Suche, Änderungsverlauf mit Rückgängig, Wartungsmodus zum Pausieren, Befehle aus anderen Bots übernehmen, Einstellungen mit Freigabe von anderen Kanälen kopieren, Liste der letzten Raids mit Shoutout-Knopf und eine Handy-Schnellleiste.</p>
+          <p>Suche im Dashboard, Einstellungen mit Freigabe von anderen Kanälen kopieren, Liste der letzten Raids mit Shoutout-Knopf und eine Handy-Schnellleiste.</p>
         </details>
       </div>
 
