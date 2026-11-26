@@ -213,7 +213,7 @@
   <main class="wrap">
     <section class="hero">
       <h1>Bot-Roadmap</h1>
-      <p>Community-Bot für Discord und Twitch · Stand: <span id="stand">25.11.2026</span></p>
+      <p>Community-Bot für Discord und Twitch · Stand: <span id="stand">26.11.2026</span></p>
     </section>
 
     <section class="progress" aria-label="Fortschritt">
@@ -251,7 +251,35 @@
       </summary>
       <p class="note">Die Roadmap wird regelmäßig aktualisiert, in der Regel einmal am Tag. Hier steht, was sich an welchem Tag geändert hat – zum Aufklappen.</p>
       <details class="log">
-        <summary><span class="log-date">25.11.2026</span><span class="log-title">4 neue Karten fürs Dashboard</span><span class="log-new">Neueste</span><span class="chev" aria-hidden="true"></span></summary>
+        <summary><span class="log-date">26.11.2026</span><span class="log-title">18 Funktionen live</span><span class="log-new">Neueste</span><span class="chev" aria-hidden="true"></span></summary>
+        <ul>
+          <li><span class="chg chg-live">Live</span><span>Grundgerüst und Einrichtung</span></li>
+          <li><span class="chg chg-live">Live</span><span>Streamer-Zentrale</span></li>
+          <li><span class="chg chg-live">Live</span><span>#linktree automatisch</span></li>
+          <li><span class="chg chg-live">Live</span><span>Mehrere Streamer-Kanäle</span></li>
+          <li><span class="chg chg-live">Live</span><span>Weitere Streamer-Kanäle freischalten</span></li>
+          <li><span class="chg chg-live">Live</span><span>Web-Dashboard</span></li>
+          <li><span class="chg chg-live">Live</span><span>Twitch-Chat-Bot</span></li>
+          <li><span class="chg chg-live">Live</span><span>Chat-Schutz und Chat-Extras</span></li>
+          <li><span class="chg chg-live">Live</span><span>Befehle aus anderen Bots übernehmen</span></li>
+          <li><span class="chg chg-live">Live</span><span>Befehle-Simulator</span></li>
+          <li><span class="chg chg-live">Live</span><span>Live-Übersicht</span></li>
+          <li><span class="chg chg-live">Live</span><span>Wartungsmodus</span></li>
+          <li><span class="chg chg-live">Live</span><span>Verbindungs-Check und Probelauf</span></li>
+          <li><span class="chg chg-live">Live</span><span>Änderungsverlauf mit Rückgängig</span></li>
+          <li><span class="chg chg-live">Live</span><span>Eigene Daten herunterladen und löschen</span></li>
+          <li><span class="chg chg-live">Live</span><span>Helfer und Admin-Stufen</span></li>
+          <li><span class="chg chg-live">Live</span><span>Benachrichtigungen und Bot-Protokoll</span></li>
+          <li><span class="chg chg-live">Live</span><span>Anleitungen im Dashboard</span></li>
+          <li><span class="chg chg-test">Im Test</span><span>Mitwachsende Live-Ankündigung</span></li>
+          <li><span class="chg chg-test">Im Test</span><span>Dashboard-Komfort</span></li>
+          <li><span class="chg chg-test">Im Test</span><span>Stream-Rückblick</span></li>
+          <li><span class="chg chg-neu">Neu</span><span>Testgelände (gleich im Test)</span></li>
+          <li><span class="chg chg-info">Seite</span><span>„Live“ heißt jetzt: gebaut und von Willy geprüft. In „Wartet auf Hardware-Lösung“ steht nur noch der Dauerbetrieb des Bots.</span></li>
+        </ul>
+      </details>
+      <details class="log">
+        <summary><span class="log-date">25.11.2026</span><span class="log-title">4 neue Karten fürs Dashboard</span><span class="chev" aria-hidden="true"></span></summary>
         <ul>
           <li><span class="chg chg-neu">Neu</span><span>Anleitungen im Dashboard</span></li>
           <li><span class="chg chg-neu">Neu</span><span>Helfer und Admin-Stufen</span></li>
@@ -312,29 +340,86 @@
       <div class="col s-live" data-col="live">
         <div class="col-head"><h3><i class="dot" style="background:var(--live)"></i>Live</h3><span class="count">0</span></div>
         <p class="col-sub">Fertig und im Einsatz.</p>
-        <div class="empty">Noch nichts – die ersten Funktionen werden gerade getestet.</div>
+
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Grundgerüst und Einrichtung</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Discord</span></div></summary>
+          <p>Bot läuft; Admins richten Kanäle und Rollen per <code>/einrichten</code> ein.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Streamer-Zentrale</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Discord</span></div></summary>
+          <p>Alle mit der Rolle „Streamer“ erscheinen automatisch. Eigene Social-Links eintragen, Ankündigungen und #linktree selbst an- oder ausschalten. Jeder ändert nur seine eigenen Daten.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>#linktree automatisch</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Discord</span></div></summary>
+          <p>Eine gepflegte „Social Links“-Nachricht pro Streamer.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Mehrere Streamer-Kanäle</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
+          <p>Alles ist pro Twitch-Kanal getrennt; jeder Streamer verbindet seinen Kanal selbst und verwaltet nur seine eigenen Einstellungen.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Weitere Streamer-Kanäle freischalten</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Web</span></div></summary>
+          <p>Admins schalten den Chat-Bot für die Kanäle weiterer Streamer frei – läuft bereits bei einem zweiten Streamer.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Web-Dashboard</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span></div></summary>
+          <p>Login mit Twitch, eigene Einstellungen bequem im Browser, Live-Übersicht. Das Dashboard wird der Hauptort für alle Streamer-Einstellungen (Links, #linktree, Ankündigungen, Konten verbinden); in Discord bleibt eine Kurzversion. Ist gebaut und wird zuerst intern getestet; für alle Streamer offen, sobald der Bot rund um die Uhr läuft.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Twitch-Chat-Bot</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
+          <p>Ein Bot für den Twitch-Chat, je Kanal einstellbar, anfangs alles aus. <strong>Befehle:</strong> fertige Standard-Befehle und eigene, z.&nbsp;B. <code>!socials</code>, <code>!uptime</code>, <code>!lurk</code>, Zitate und Zähler, <code>!so</code> (offizieller Twitch-Shoutout mit eigenem Text) und <code>!clip</code> (erstellt einen Clip und postet den Link). <strong>Timer:</strong> regelmäßige Hinweise im Chat, nur wenn live und genug los ist. <strong>Giveaways:</strong> Start, Teilnahme per Stichwort, fair gezogene Gewinner – im Chat und in Discord.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Chat-Schutz und Chat-Extras</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Web</span></div></summary>
+          <p>Erweiterungen für den Twitch-Chat-Bot, je Kanal einstellbar: Schutz vor Links, Spam und verbotenen Begriffen (mit Testmodus), Zufallswerte und Zähler in Befehlen, Befehle nur live oder nur offline, kleine Chat-Spiele ohne Einsätze und eine gemeinsame Befehle-Bibliothek der Pixelbude.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Befehle aus anderen Bots übernehmen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Web</span></div></summary>
+          <p>Befehle und Timer aus Nightbot, StreamElements oder Moobot einfügen, Vorschau ansehen und auswählen. Platzhalter werden übersetzt, alles kommt erst einmal ausgeschaltet an.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Befehle-Simulator</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Web</span></div></summary>
+          <p>Einen Befehl im Dashboard eintippen und sofort sehen, was der Bot antworten würde – oder warum er gerade nicht antwortet. Nichts davon landet im echten Chat.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Live-Übersicht</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span><span class="tag">Twitch</span></div></summary>
+          <p>Wer aus der Pixelbude gerade live ist – mit Vorschaubild, Spiel, Zuschauern und Laufzeit, sonst seit wann offline. Im Dashboard für alle sichtbar, ein Klick führt zum Twitch-Kanal.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Wartungsmodus</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span><span class="tag">Discord</span></div></summary>
+          <p>Ankündigungen, Chat-Befehle, Timer und Chat-Schutz auf Knopfdruck pausieren – für den eigenen Kanal oder (Admins) für alle, auf Wunsch mit Endzeit und Grund. Danach wird nichts nachgeholt, es gibt also keine Flut.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Verbindungs-Check und Probelauf</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span><span class="tag">Discord</span></div></summary>
+          <p>Eine Ampel zeigt jedem Streamer, ob alles richtig verbunden ist – mit kurzem Hinweis, was zu tun ist. Dazu ein Probe-Live, das eine Live-Ankündigung gefahrlos in einem Testkanal durchspielt.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Änderungsverlauf mit Rückgängig</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span></div></summary>
+          <p>Jede Änderung an Einstellungen, egal ob im Dashboard oder in Discord, steht im Verlauf: wer, wann, vorher und nachher. Einzelne Änderungen lassen sich mit einem Klick zurücksetzen.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Eigene Daten herunterladen und löschen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span></div></summary>
+          <p>Jeder Streamer kann alle seine Daten herunterladen oder komplett löschen lassen.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Helfer und Admin-Stufen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span></div></summary>
+          <p>Neben Admins gibt es Helfer, die mehr sehen, aber nur wenig ändern dürfen. Admins können das Dashboard außerdem so ansehen, wie es ein bestimmter Streamer sieht – nur zum Anschauen.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Benachrichtigungen und Bot-Protokoll</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span></div></summary>
+          <p>Eine Glocke sammelt alle Meldungen an einem Ort, z.&nbsp;B. eine abgelaufene Verbindung oder einen Kollab-Vorschlag. Dazu eine laufende Liste, was der Bot gerade macht – je Kanal, nur für den eigenen.</p>
+        </details>
+        <details class="card s-live" data-status="live">
+          <summary><span class="card-head"><h4>Anleitungen im Dashboard</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span><span class="tag">Discord</span></div></summary>
+          <p>Schritt-für-Schritt-Hilfe zum Abhaken: für Streamer, wie sie den Bot in ihrem Kanal einrichten und ihre Konten verbinden; für Zuschauer, wie sie Twitch und Discord einmal verknüpfen – das gilt dann für alle Kanäle der Pixelbude. Mit fertigen Texten zum Weitergeben.</p>
+        </details>
       </div>
 
       <!-- GEPLANT -->
       <div class="col s-plan" data-col="plan">
         <div class="col-head"><h3><i class="dot" style="background:var(--plan)"></i>In Arbeit / geplant</h3><span class="count">9</span></div>
         <p class="col-sub">Gebaut und im Test oben, danach ungefähr in dieser Reihenfolge.</p>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Grundgerüst und Einrichtung</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Discord</span></div></summary>
-          <p>Bot läuft; Admins richten Kanäle und Rollen per <code>/einrichten</code> ein.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Streamer-Zentrale</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Discord</span></div></summary>
-          <p>Alle mit der Rolle „Streamer“ erscheinen automatisch. Eigene Social-Links eintragen, Ankündigungen und #linktree selbst an- oder ausschalten. Jeder ändert nur seine eigenen Daten.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>#linktree automatisch</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Discord</span></div></summary>
-          <p>Eine gepflegte „Social Links“-Nachricht pro Streamer.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Mehrere Streamer-Kanäle</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
-          <p>Alles ist pro Twitch-Kanal getrennt; jeder Streamer verbindet seinen Kanal selbst und verwaltet nur seine eigenen Einstellungen.</p>
-        </details>
+
         <details class="card s-plan" data-status="plan">
           <summary><span class="card-head"><h4>Live-Ankündigungen und Rolle „Live“</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
           <p>Ankündigung beim Stream-Start, Rolle „Live“ solange gestreamt wird.</p>
@@ -352,72 +437,32 @@
           <p>Neue Videos und Shorts automatisch ankündigen.</p>
         </details>
         <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Twitch-Chat-Bot</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
-          <p>Ein Bot für den Twitch-Chat, je Kanal einstellbar, anfangs alles aus. <strong>Befehle:</strong> fertige Standard-Befehle und eigene, z.&nbsp;B. <code>!socials</code>, <code>!uptime</code>, <code>!lurk</code>, Zitate und Zähler, <code>!so</code> (offizieller Twitch-Shoutout mit eigenem Text) und <code>!clip</code> (erstellt einen Clip und postet den Link). <strong>Timer:</strong> regelmäßige Hinweise im Chat, nur wenn live und genug los ist. <strong>Giveaways:</strong> Start, Teilnahme per Stichwort, fair gezogene Gewinner – im Chat und in Discord.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
           <summary><span class="card-head"><h4>TikTok-Ankündigungen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">TikTok</span><span class="tag">Discord</span></div></summary>
           <p>Jeder Streamer verbindet seinen TikTok-Account einmal, neue Videos werden automatisch angekündigt.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Web-Dashboard</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span></div></summary>
-          <p>Login mit Twitch, eigene Einstellungen bequem im Browser, Live-Übersicht. Das Dashboard wird der Hauptort für alle Streamer-Einstellungen (Links, #linktree, Ankündigungen, Konten verbinden); in Discord bleibt eine Kurzversion. Ist gebaut und wird zuerst intern getestet; für alle Streamer offen, sobald der Bot rund um die Uhr läuft.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Verbindungs-Check und Probelauf</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span><span class="tag">Discord</span></div></summary>
-          <p>Eine Ampel zeigt jedem Streamer, ob alles richtig verbunden ist – mit kurzem Hinweis, was zu tun ist. Dazu ein Probe-Live, das eine Live-Ankündigung gefahrlos in einem Testkanal durchspielt.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Chat-Schutz und Chat-Extras</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Twitch</span><span class="tag">Web</span></div></summary>
-          <p>Erweiterungen für den Twitch-Chat-Bot, je Kanal einstellbar: Schutz vor Links, Spam und verbotenen Begriffen (mit Testmodus), Zufallswerte und Zähler in Befehlen, Befehle nur live oder nur offline, kleine Chat-Spiele ohne Einsätze und eine gemeinsame Befehle-Bibliothek der Pixelbude.</p>
         </details>
         <details class="card s-plan" data-status="plan">
           <summary><span class="card-head"><h4>Eigene Ping-Rollen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Discord</span></div></summary>
           <p>Zuschauer wählen per Knopf selbst, bei welchen Streamern sie gepingt werden wollen.</p>
         </details>
         <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Eigene Daten herunterladen und löschen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span></div></summary>
-          <p>Jeder Streamer kann alle seine Daten herunterladen oder komplett löschen lassen.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
           <summary><span class="card-head"><h4>Gemeinsamer Kollab-Post</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
           <p>Streamen mehrere aus der Pixelbude zusammen (gleiches Spiel und gemeinsamer Chat, Erwähnung im Titel oder ein vereinbartes Stichwort), schlägt der Bot einen gemeinsamen Post vor. Gepostet wird nur, wenn alle zustimmen – die Zustimmung läuft über das Dashboard. Je Streamer einstellbar, anfangs aus.</p>
         </details>
         <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Wartungsmodus</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span><span class="tag">Discord</span></div></summary>
-          <p>Ankündigungen, Chat-Befehle, Timer und Chat-Schutz auf Knopfdruck pausieren – für den eigenen Kanal oder (Admins) für alle, auf Wunsch mit Endzeit und Grund. Danach wird nichts nachgeholt, es gibt also keine Flut.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Änderungsverlauf mit Rückgängig</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span></div></summary>
-          <p>Jede Änderung an Einstellungen, egal ob im Dashboard oder in Discord, steht im Verlauf: wer, wann, vorher und nachher. Einzelne Änderungen lassen sich mit einem Klick zurücksetzen.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Befehle aus anderen Bots übernehmen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Twitch</span><span class="tag">Web</span></div></summary>
-          <p>Befehle und Timer aus Nightbot, StreamElements oder Moobot einfügen, Vorschau ansehen und auswählen. Platzhalter werden übersetzt, alles kommt erst einmal ausgeschaltet an.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Mitwachsende Live-Ankündigung</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
+          <summary><span class="card-head"><h4>Mitwachsende Live-Ankündigung</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Twitch</span><span class="tag">Discord</span></div></summary>
           <p>Die Live-Ankündigung wächst mit: Titel- oder Spielwechsel werden nachgetragen, nach dem Stream wird daraus „war live“ mit Dauer und Link zum VOD.</p>
         </details>
         <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Dashboard-Komfort</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span></div></summary>
+          <summary><span class="card-head"><h4>Dashboard-Komfort</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span></div></summary>
           <p>Suche im Dashboard, Einstellungen mit Freigabe von anderen Kanälen kopieren, Liste der letzten Raids mit Shoutout-Knopf und eine Handy-Schnellleiste. Dazu kurze „?“-Erklärungen an jeder Einstellung, ein Schutz vor verlorenen Änderungen und ein Kasten „Neu im Dashboard“.</p>
         </details>
         <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Anleitungen im Dashboard</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span><span class="tag">Discord</span></div></summary>
-          <p>Schritt-für-Schritt-Hilfe zum Abhaken: für Streamer, wie sie den Bot in ihrem Kanal einrichten und ihre Konten verbinden; für Zuschauer, wie sie Twitch und Discord einmal verknüpfen – das gilt dann für alle Kanäle der Pixelbude. Mit fertigen Texten zum Weitergeben.</p>
+          <summary><span class="card-head"><h4>Testgelände</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span><span class="tag">Discord</span><span class="tag">Twitch</span></div></summary>
+          <p>Alles gefahrlos ausprobieren: so tun, als wäre man live, Test-Ankündigungen nur im Testkanal, Chat-Befehle in einem nachgebauten Chat und ein ganzer Stream im Zeitraffer – nichts davon ist öffentlich.</p>
         </details>
         <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Helfer und Admin-Stufen</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span></div></summary>
-          <p>Neben Admins gibt es Helfer, die mehr sehen, aber nur wenig ändern dürfen. Admins können das Dashboard außerdem so ansehen, wie es ein bestimmter Streamer sieht – nur zum Anschauen.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Befehle-Simulator</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span><span class="tag">Web</span></div></summary>
-          <p>Einen Befehl im Dashboard eintippen und sofort sehen, was der Bot antworten würde – oder warum er gerade nicht antwortet. Nichts davon landet im echten Chat.</p>
-        </details>
-        <details class="card s-plan" data-status="plan">
-          <summary><span class="card-head"><h4>Benachrichtigungen und Bot-Protokoll</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span></div></summary>
-          <p>Eine Glocke sammelt alle Meldungen an einem Ort, z.&nbsp;B. eine abgelaufene Verbindung oder einen Kollab-Vorschlag. Dazu eine laufende Liste, was der Bot gerade macht – je Kanal, nur für den eigenen.</p>
+          <summary><span class="card-head"><h4>Stream-Rückblick</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag tag-test">Im Test</span><span class="tag">Web</span><span class="tag">Twitch</span></div></summary>
+          <p>Nach jedem Stream die Twitch-Zahlen plus Extras: Chat-Höhepunkte, Stammgäste, Befehle, Clips. Erste Stufe gebaut, ganz rund erst mit Dauerbetrieb.</p>
         </details>
       </div>
 
@@ -425,21 +470,10 @@
       <div class="col s-wait" data-col="wait">
         <div class="col-head"><h3><i class="dot" style="background:var(--wait)"></i>Wartet auf Hardware-Lösung</h3><span class="count">5</span></div>
         <p class="col-sub">Braucht einen Bot, der rund um die Uhr läuft.</p>
+
         <details class="card s-wait" data-status="wait">
           <summary><span class="card-head"><h4>Bot rund um die Uhr</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Discord</span><span class="tag">Twitch</span></div></summary>
-          <p>Der Bot zieht auf ein eigenes Gerät und läuft dann dauerhaft – Voraussetzung für alles in dieser Spalte.</p>
-        </details>
-        <details class="card s-wait" data-status="wait">
-          <summary><span class="card-head"><h4>Weitere Streamer-Kanäle freischalten</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Twitch</span></div></summary>
-          <p>Chat-Bot auch in den Kanälen der anderen Streamer.</p>
-        </details>
-        <details class="card s-wait" data-status="wait">
-          <summary><span class="card-head"><h4>Live-Übersicht</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span><span class="tag">Discord</span></div></summary>
-          <p>Wer aus der Pixelbude gerade live ist.</p>
-        </details>
-        <details class="card s-wait" data-status="wait">
-          <summary><span class="card-head"><h4>Stream-Rückblick</h4><span class="chev" aria-hidden="true"></span></span><div class="tags"><span class="tag">Web</span><span class="tag">Twitch</span></div></summary>
-          <p>Nach jedem Stream die Twitch-Zahlen plus Extras: Chat-Höhepunkte, Stammgäste, Befehle, Clips.</p>
+          <p>Umzug auf ein eigenes Gerät. Bis dahin läuft der Bot nur, solange der PC von Willy an ist.</p>
         </details>
       </div>
     </section>
